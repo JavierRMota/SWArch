@@ -1,13 +1,12 @@
 # Template Method Pattern
-# Date: 20-Feb-2020
+# Date: 18-Feb-2020
 # Authors:
 #          A01372812 José Javier Rodríguez Mota
-#
-# File name: table_generator_test.rb
+#          A01379228 Adrián Méndez López
 
 require 'minitest/autorun'
-require './table_generator'
-require './student'
+require 'table_generator'
+require 'student'
 
 class TableGeneratorTest < Minitest::Test
 
