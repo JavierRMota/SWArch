@@ -17,7 +17,7 @@ This is done by making calls to their respective methods, which process specific
 
 The UML diagram for this programming activity is as follows:
 
-rdoc-image:img/singleton_uml.png
+rdoc-image:img/UML.png
 
 To test the program, inside the +src+ folder type the following instruction
 at the command line:
@@ -25,10 +25,6 @@ at the command line:
     ruby -I . -w table_generator_test.rb
 
 == References
-
-- \M. Fowler. <em>UML Distilled: A Brief Guide to the Standard Object Modeling Language, 3rd Edition.</em>  Addison-Wesley, 2003.
-
-- \E. Gamma, R. Helm, R. Johnson, J. M. Vlissides. <em>Design Patterns: Elements of Reusable Object-Oriented Software.</em> Addison-Wesley, 1994.
 
 - \R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley, 2007.
 
