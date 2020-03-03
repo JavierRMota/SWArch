@@ -1,0 +1,32 @@
+= Observer Pattern
+
+This documentation was created as part of a programming
+activity for the <em>Software Design and Architecture</em>
+course (_TC3049_), at the Tecnológico de Monterrey, Campus
+Estado de México.
+
+== Authors
+
+* *A01372812* <em>José Javier Rodríguez Mota</em>
+* *A01379228* <em>Adrián Méndez López</em>
+
+== Overview
+
+The general idea of the <b>Observer Pattern</b> allows you to build components
+that know about the activities of other components without having to tightly
+couple everything together in an unmanageable mess of code-flavored spaghetti by creating a clean interface
+between the source of the news (the observable object) and the consumer of that news (the observers).
+
+The UML diagram for this programming activity is as follows:
+
+
+
+To test the program, inside the +src+ folder type the following
+instruction at the command line:
+
+    ruby -I . -w twitter_test.rb
+
+== References
+
+- \R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley,
+2007.

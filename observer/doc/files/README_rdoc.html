@@ -30,15 +30,15 @@ README.rdoc
 </div>
 <div class='last-update'>
 Last Update:
-<span class='datetime'>2020-02-21 21:52:48 +0000</span>
+<span class='datetime'>2020-03-03 01:12:04 +0000</span>
 </div>
 </div>
 <div id='content'>
 <div id='text'>
 <div id='description'>
-<h1 id="label-Template+Method+Pattern">Template Method Pattern<span><a href="#label-Template+Method+Pattern">&para;</a> <a href="#top">&uarr;</a></span></h1>
+<h1 id="label-Observer+Pattern">Observer Pattern<span><a href="#label-Observer+Pattern">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<p>This documentation was developed as part of a programming activity for the <em>Software Design and Architecture</em> course (<em>Tc3049</em>), at the Tecnológico de Monterrey, Campus Estado de México.</p>
+<p>This documentation was created as part of a programming activity for the <em>Software Design and Architecture</em> course (<em>TC3049</em>), at the Tecnológico de Monterrey, Campus Estado de México.</p>
 
 <h2 id="label-Authors">Authors<span><a href="#label-Authors">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <ul><li>
@@ -49,26 +49,20 @@ Last Update:
 
 <h2 id="label-Overview">Overview<span><a href="#label-Overview">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>The general idea of the Template Method Pattern is to build an abstract base class with a skeletal method. This template method allows to process the necessary bits within a general (abstract) class for a code that needs to vary. This is done by making calls to their respective methods, which process specific actions that are supplied when selecting the specific subclasses.</p>
+<p>The general idea of the <strong>Observer Pattern</strong> allows you to build components that know about the activities of other components without having to tightly couple everything together in an unmanageable mess of code-flavored spaghetti by creating a clean interface between the source of the news (the observable object) and the consumer of that news (the observers).</p>
 
 <p>The UML diagram for this programming activity is as follows:</p>
 
-<p><img src="img/singleton_uml.png"></p>
-
 <p>To test the program, inside the <code>src</code> folder type the following instruction at the command line:</p>
 
-<pre>ruby -I . -w table_generator_test.rb</pre>
+<pre>ruby -I . -w twitter_test.rb</pre>
 
 <h2 id="label-References">References<span><a href="#label-References">&para;</a> <a href="#top">&uarr;</a></span></h2>
 <ul><li>
-<p>M. Fowler. <em>UML Distilled: A Brief Guide to the Standard Object Modeling Language, 3rd Edition.</em>  Addison-Wesley, 2003.</p>
-</li><li>
-<p>E. Gamma, R. Helm, R. Johnson, J. M. Vlissides. <em>Design Patterns: Elements of Reusable Object-Oriented Software.</em> Addison-Wesley, 1994.</p>
-</li><li>
-<p>R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley, 2007.</p>
-</li><li>
-<p>Ruby-Doc.org. <em>RDoc Markup Reference.</em> <a target="_top" href="http://ruby-doc.org/stdlib-2.4.1/libdoc/rdoc/rdoc/RDoc/Markup.html">http://ruby-doc.org/stdlib-2.4.1/libdoc/rdoc/rdoc/RDoc/Markup.html</a> Accessed August 17, 2017.</p>
+<p>R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley,</p>
 </li></ul>
+
+<p>2007.</p>
 </div>
 <div id='context'>
 </div>

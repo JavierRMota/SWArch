@@ -4330,28 +4330,15 @@ Object.extend(Element.ClassNames.prototype, Enumerable);
 
 Element.addMethods();
 var search_index = [
-  { method: 'new', module: 'student', html: '<a href="classes/Student.html#method-c-new"><span class="method_name">::new</span> <span class="module_name">(Student)</span></a>' },
-  { method: 'new', module: 'tablegenerator', html: '<a href="classes/TableGenerator.html#method-c-new"><span class="method_name">::new</span> <span class="module_name">(TableGenerator)</span></a>' },
-  { method: 'each', module: 'student', html: '<a href="classes/Student.html#method-i-each"><span class="method_name">#each</span> <span class="module_name">(Student)</span></a>' },
-  { method: 'generate', module: 'asciidoctablegenerator', html: '<a href="classes/AsciiDocTableGenerator.html#method-i-generate"><span class="method_name">#generate</span> <span class="module_name">(AsciiDocTableGenerator)</span></a>' },
-  { method: 'generate', module: 'htmltablegenerator', html: '<a href="classes/HTMLTableGenerator.html#method-i-generate"><span class="method_name">#generate</span> <span class="module_name">(HTMLTableGenerator)</span></a>' },
-  { method: 'generate', module: 'tablegenerator', html: '<a href="classes/TableGenerator.html#method-i-generate"><span class="method_name">#generate</span> <span class="module_name">(TableGenerator)</span></a>' },
-  { method: 'generate_header_item', module: 'tablegenerator', html: '<a href="classes/TableGenerator.html#method-i-generate_header_item"><span class="method_name">#generate_header_item</span> <span class="module_name">(TableGenerator)</span></a>' },
-  { method: 'generate_header_row', module: 'asciidoctablegenerator', html: '<a href="classes/AsciiDocTableGenerator.html#method-i-generate_header_row"><span class="method_name">#generate_header_row</span> <span class="module_name">(AsciiDocTableGenerator)</span></a>' },
-  { method: 'generate_header_row', module: 'csvtablegenerator', html: '<a href="classes/CSVTableGenerator.html#method-i-generate_header_row"><span class="method_name">#generate_header_row</span> <span class="module_name">(CSVTableGenerator)</span></a>' },
-  { method: 'generate_header_row', module: 'htmltablegenerator', html: '<a href="classes/HTMLTableGenerator.html#method-i-generate_header_row"><span class="method_name">#generate_header_row</span> <span class="module_name">(HTMLTableGenerator)</span></a>' },
-  { method: 'generate_header_row', module: 'tablegenerator', html: '<a href="classes/TableGenerator.html#method-i-generate_header_row"><span class="method_name">#generate_header_row</span> <span class="module_name">(TableGenerator)</span></a>' },
-  { method: 'generate_item', module: 'tablegenerator', html: '<a href="classes/TableGenerator.html#method-i-generate_item"><span class="method_name">#generate_item</span> <span class="module_name">(TableGenerator)</span></a>' },
-  { method: 'generate_row', module: 'asciidoctablegenerator', html: '<a href="classes/AsciiDocTableGenerator.html#method-i-generate_row"><span class="method_name">#generate_row</span> <span class="module_name">(AsciiDocTableGenerator)</span></a>' },
-  { method: 'generate_row', module: 'csvtablegenerator', html: '<a href="classes/CSVTableGenerator.html#method-i-generate_row"><span class="method_name">#generate_row</span> <span class="module_name">(CSVTableGenerator)</span></a>' },
-  { method: 'generate_row', module: 'htmltablegenerator', html: '<a href="classes/HTMLTableGenerator.html#method-i-generate_row"><span class="method_name">#generate_row</span> <span class="module_name">(HTMLTableGenerator)</span></a>' },
-  { method: 'generate_row', module: 'tablegenerator', html: '<a href="classes/TableGenerator.html#method-i-generate_row"><span class="method_name">#generate_row</span> <span class="module_name">(TableGenerator)</span></a>' },
-  { method: 'grade_average', module: 'student', html: '<a href="classes/Student.html#method-i-grade_average"><span class="method_name">#grade_average</span> <span class="module_name">(Student)</span></a>' },
-  { method: 'inspect', module: 'student', html: '<a href="classes/Student.html#method-i-inspect"><span class="method_name">#inspect</span> <span class="module_name">(Student)</span></a>' },
-  { method: 'setup', module: 'tablegeneratortest', html: '<a href="classes/TableGeneratorTest.html#method-i-setup"><span class="method_name">#setup</span> <span class="module_name">(TableGeneratorTest)</span></a>' },
-  { method: 'test_asciidoctablegenerator', module: 'tablegeneratortest', html: '<a href="classes/TableGeneratorTest.html#method-i-test_AsciiDocTableGenerator"><span class="method_name">#test_AsciiDocTableGenerator</span> <span class="module_name">(TableGeneratorTest)</span></a>' },
-  { method: 'test_csvtablegenerator', module: 'tablegeneratortest', html: '<a href="classes/TableGeneratorTest.html#method-i-test_CSVTableGenerator"><span class="method_name">#test_CSVTableGenerator</span> <span class="module_name">(TableGeneratorTest)</span></a>' },
-  { method: 'test_htmltablegenerator', module: 'tablegeneratortest', html: '<a href="classes/TableGeneratorTest.html#method-i-test_HTMLTableGenerator"><span class="method_name">#test_HTMLTableGenerator</span> <span class="module_name">(TableGeneratorTest)</span></a>' },
+  { method: 'new', module: 'twitter', html: '<a href="classes/Twitter.html#method-c-new"><span class="method_name">::new</span> <span class="module_name">(Twitter)</span></a>' },
+  { method: 'follow', module: 'twitter', html: '<a href="classes/Twitter.html#method-i-follow"><span class="method_name">#follow</span> <span class="module_name">(Twitter)</span></a>' },
+  { method: 'receive_tweet', module: 'twitter', html: '<a href="classes/Twitter.html#method-i-receive_tweet"><span class="method_name">#receive_tweet</span> <span class="module_name">(Twitter)</span></a>' },
+  { method: 'setup', module: 'twittertest', html: '<a href="classes/TwitterTest.html#method-i-setup"><span class="method_name">#setup</span> <span class="module_name">(TwitterTest)</span></a>' },
+  { method: 'teardown', module: 'twittertest', html: '<a href="classes/TwitterTest.html#method-i-teardown"><span class="method_name">#teardown</span> <span class="module_name">(TwitterTest)</span></a>' },
+  { method: 'test_twitter_alices_adventures_in_wonderland', module: 'twittertest', html: '<a href="classes/TwitterTest.html#method-i-test_twitter_alices_adventures_in_wonderland"><span class="method_name">#test_twitter_alices_adventures_in_wonderland</span> <span class="module_name">(TwitterTest)</span></a>' },
+  { method: 'test_twitter_star_wars', module: 'twittertest', html: '<a href="classes/TwitterTest.html#method-i-test_twitter_star_wars"><span class="method_name">#test_twitter_star_wars</span> <span class="module_name">(TwitterTest)</span></a>' },
+  { method: 'tweet', module: 'twitter', html: '<a href="classes/Twitter.html#method-i-tweet"><span class="method_name">#tweet</span> <span class="module_name">(Twitter)</span></a>' },
+  { method: 'followers', module: 'twitter', html: '<a href="classes/Twitter.html#attribute-i-followers"><span class="method_name">#followers</span> <span class="module_name">(Twitter)</span></a>' },
 ]
 $(document).observe('dom:loaded', function() {
 	// Setup search-during-typing.
@@ -4423,28 +4410,15 @@ function performSearch() {
 </form>
 <ol class='methods' id='search-results' style='display: none'></ol>
 <ol class='methods' id='index-entries'>
-<li><a href="classes/Student.html#method-c-new"><span class="method_name">::new</span> <span class="module_name">(Student)</span></a></li>
-<li><a href="classes/TableGenerator.html#method-c-new"><span class="method_name">::new</span> <span class="module_name">(TableGenerator)</span></a></li>
-<li><a href="classes/Student.html#method-i-each"><span class="method_name">#each</span> <span class="module_name">(Student)</span></a></li>
-<li><a href="classes/AsciiDocTableGenerator.html#method-i-generate"><span class="method_name">#generate</span> <span class="module_name">(AsciiDocTableGenerator)</span></a></li>
-<li><a href="classes/HTMLTableGenerator.html#method-i-generate"><span class="method_name">#generate</span> <span class="module_name">(HTMLTableGenerator)</span></a></li>
-<li><a href="classes/TableGenerator.html#method-i-generate"><span class="method_name">#generate</span> <span class="module_name">(TableGenerator)</span></a></li>
-<li><a href="classes/TableGenerator.html#method-i-generate_header_item"><span class="method_name">#generate_header_item</span> <span class="module_name">(TableGenerator)</span></a></li>
-<li><a href="classes/AsciiDocTableGenerator.html#method-i-generate_header_row"><span class="method_name">#generate_header_row</span> <span class="module_name">(AsciiDocTableGenerator)</span></a></li>
-<li><a href="classes/CSVTableGenerator.html#method-i-generate_header_row"><span class="method_name">#generate_header_row</span> <span class="module_name">(CSVTableGenerator)</span></a></li>
-<li><a href="classes/HTMLTableGenerator.html#method-i-generate_header_row"><span class="method_name">#generate_header_row</span> <span class="module_name">(HTMLTableGenerator)</span></a></li>
-<li><a href="classes/TableGenerator.html#method-i-generate_header_row"><span class="method_name">#generate_header_row</span> <span class="module_name">(TableGenerator)</span></a></li>
-<li><a href="classes/TableGenerator.html#method-i-generate_item"><span class="method_name">#generate_item</span> <span class="module_name">(TableGenerator)</span></a></li>
-<li><a href="classes/AsciiDocTableGenerator.html#method-i-generate_row"><span class="method_name">#generate_row</span> <span class="module_name">(AsciiDocTableGenerator)</span></a></li>
-<li><a href="classes/CSVTableGenerator.html#method-i-generate_row"><span class="method_name">#generate_row</span> <span class="module_name">(CSVTableGenerator)</span></a></li>
-<li><a href="classes/HTMLTableGenerator.html#method-i-generate_row"><span class="method_name">#generate_row</span> <span class="module_name">(HTMLTableGenerator)</span></a></li>
-<li><a href="classes/TableGenerator.html#method-i-generate_row"><span class="method_name">#generate_row</span> <span class="module_name">(TableGenerator)</span></a></li>
-<li><a href="classes/Student.html#method-i-grade_average"><span class="method_name">#grade_average</span> <span class="module_name">(Student)</span></a></li>
-<li><a href="classes/Student.html#method-i-inspect"><span class="method_name">#inspect</span> <span class="module_name">(Student)</span></a></li>
-<li><a href="classes/TableGeneratorTest.html#method-i-setup"><span class="method_name">#setup</span> <span class="module_name">(TableGeneratorTest)</span></a></li>
-<li><a href="classes/TableGeneratorTest.html#method-i-test_AsciiDocTableGenerator"><span class="method_name">#test_AsciiDocTableGenerator</span> <span class="module_name">(TableGeneratorTest)</span></a></li>
-<li><a href="classes/TableGeneratorTest.html#method-i-test_CSVTableGenerator"><span class="method_name">#test_CSVTableGenerator</span> <span class="module_name">(TableGeneratorTest)</span></a></li>
-<li><a href="classes/TableGeneratorTest.html#method-i-test_HTMLTableGenerator"><span class="method_name">#test_HTMLTableGenerator</span> <span class="module_name">(TableGeneratorTest)</span></a></li>
+<li><a href="classes/Twitter.html#attribute-i-followers"><span class="method_name">#followers</span> <span class="module_name">(Twitter)</span></a></li>
+<li><a href="classes/Twitter.html#method-c-new"><span class="method_name">::new</span> <span class="module_name">(Twitter)</span></a></li>
+<li><a href="classes/Twitter.html#method-i-follow"><span class="method_name">#follow</span> <span class="module_name">(Twitter)</span></a></li>
+<li><a href="classes/Twitter.html#method-i-receive_tweet"><span class="method_name">#receive_tweet</span> <span class="module_name">(Twitter)</span></a></li>
+<li><a href="classes/TwitterTest.html#method-i-setup"><span class="method_name">#setup</span> <span class="module_name">(TwitterTest)</span></a></li>
+<li><a href="classes/TwitterTest.html#method-i-teardown"><span class="method_name">#teardown</span> <span class="module_name">(TwitterTest)</span></a></li>
+<li><a href="classes/TwitterTest.html#method-i-test_twitter_alices_adventures_in_wonderland"><span class="method_name">#test_twitter_alices_adventures_in_wonderland</span> <span class="module_name">(TwitterTest)</span></a></li>
+<li><a href="classes/TwitterTest.html#method-i-test_twitter_star_wars"><span class="method_name">#test_twitter_star_wars</span> <span class="module_name">(TwitterTest)</span></a></li>
+<li><a href="classes/Twitter.html#method-i-tweet"><span class="method_name">#tweet</span> <span class="module_name">(Twitter)</span></a></li>
 </ol>
 </div>
 </body>

@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>Twitter</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='class' id='wrapper'>
+<div class='header'>
+<h1 class='name'><span class='type'>class</span>
+Twitter
+</h1>
+<ol class='paths'>
+<li>
+<a href="../files/src/twitter_rb.html">src/twitter.rb</a>
+</li>
+</ol>
+<div class='parent'>
+Superclass:
+<strong>Object</strong>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'>
+<p>A class that models several <a href="Twitter.html"><code>Twitter</code></a> instances</p>
+</div>
+<div id='method-list'>
+<h2>Methods</h2>
+<h3>Public Class</h3>
+<ol>
+<li><a href="#method-c-new">new</a></li>
+</ol>
+<h3>Public Instance</h3>
+<ol>
+<li><a href="#method-i-follow">follow</a></li>
+<li><a href="#attribute-i-followers">followers</a></li>
+<li><a href="#method-i-receive_tweet">receive_tweet</a></li>
+<li><a href="#method-i-tweet">tweet</a></li>
+</ol>
+</div>
+<div id='context'>
+</div>
+<div id='section'>
+<div id='attribute-list'>
+<h2 class='section-bar'>Attributes</h2>
+<div class='name-list'>
+<table>
+<tr class='top-aligned-row context-row'>
+<td class='context-item-name'>
+<a name='attribute-i-followers'>followers</a>
+</td>
+<td class='context-item-value'>[RW]</td>
+<td class='context-item-desc'>
+<p>Followers of the instance</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id='methods'>
+<h2>Public Class methods</h2>
+<div class='method public-class' id='method-method-c-new'>
+<a name='method-c-new'></a>
+<div class='synopsis'>
+<span class='name'>new</span>
+<span class='arguments'>(name)</span>
+
+</div>
+<div class='description'>
+
+<p>Creates the instances of <a href="Twitter.html"><code>Twitter</code></a> class params: name, followers</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-c-new-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-c-new-source'><span class="ruby-comment"># File src/twitter.rb, line 17</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">name</span>)&#x000A;  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>&#x000A;  <span class="ruby-ivar">@followers</span> = []&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<h2>Public Instance methods</h2>
+<div class='method public-instance' id='method-method-i-follow'>
+<a name='method-i-follow'></a>
+<div class='synopsis'>
+<span class='name'>follow</span>
+<span class='arguments'>(user)</span>
+
+</div>
+<div class='description'>
+
+<p>follow method will add this instance as an observer/follower of user</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-follow-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-follow-source'><span class="ruby-comment"># File src/twitter.rb, line 23</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">follow</span>(<span class="ruby-identifier">user</span>)&#x000A;  <span class="ruby-identifier">user</span>.<span class="ruby-identifier">followers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>&#x000A;  <span class="ruby-keyword">self</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-receive_tweet'>
+<a name='method-i-receive_tweet'></a>
+<div class='synopsis'>
+<span class='name'>receive_tweet</span>
+<span class='arguments'>(user, text)</span>
+
+</div>
+<div class='description'>
+
+<p><a href="Twitter.html#method-i-receive_tweet"><code>receive_tweet</code></a> method prints the name of observer and the tweet text of this instance for each one of its follower.</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-receive_tweet-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-receive_tweet-source'><span class="ruby-comment"># File src/twitter.rb, line 37</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">receive_tweet</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">text</span>)&#x000A;  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{@name} received a tweet from #{user}: #{text}&quot;</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-tweet'>
+<a name='method-i-tweet'></a>
+<div class='synopsis'>
+<span class='name'>tweet</span>
+<span class='arguments'>(text)</span>
+
+</div>
+<div class='description'>
+
+<p>tweet method will inform to all followers about this instance tweet</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-tweet-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-tweet-source'><span class="ruby-comment"># File src/twitter.rb, line 29</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">tweet</span>(<span class="ruby-identifier">text</span>)&#x000A;  <span class="ruby-ivar">@followers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">follower</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">follower</span>.<span class="ruby-identifier">receive_tweet</span>(<span class="ruby-ivar">@name</span>, <span class="ruby-identifier">text</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>
