@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>ControlTest</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='class' id='wrapper'>
+<div class='header'>
+<h1 class='name'><span class='type'>class</span>
+ControlTest
+</h1>
+<ol class='paths'>
+<li>
+<a href="../files/src/control_test_rb.html">src/control_test.rb</a>
+</li>
+</ol>
+<div class='parent'>
+Superclass:
+<strong>Minitest::Test</strong>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'></div>
+<div id='method-list'>
+<h2>Methods</h2>
+<h3>Public Instance</h3>
+<ol>
+<li><a href="#method-i-reset_stdout">reset_stdout</a></li>
+<li><a href="#method-i-set_fan">set_fan</a></li>
+<li><a href="#method-i-set_light">set_light</a></li>
+<li><a href="#method-i-set_stdout">set_stdout</a></li>
+<li><a href="#method-i-setup">setup</a></li>
+<li><a href="#method-i-teardown">teardown</a></li>
+<li><a href="#method-i-test_fan">test_fan</a></li>
+<li><a href="#method-i-test_light">test_light</a></li>
+</ol>
+</div>
+<div id='context'>
+</div>
+<div id='section'>
+<div id='methods'>
+<h2>Public Instance methods</h2>
+<div class='method public-instance' id='method-method-i-reset_stdout'>
+<a name='method-i-reset_stdout'></a>
+<div class='synopsis'>
+<span class='name'>reset_stdout</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Resets the stdout to old_stdout</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-reset_stdout-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-reset_stdout-source'><span class="ruby-comment"># File src/control_test.rb, line 39</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset_stdout</span>&#x000A;  <span class="ruby-identifier">$stdout</span> = <span class="ruby-ivar">@old_stdout</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-set_fan'>
+<a name='method-i-set_fan'></a>
+<div class='synopsis'>
+<span class='name'>set_fan</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Sets the fan for the tests</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-set_fan-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-set_fan-source'><span class="ruby-comment"># File src/control_test.rb, line 52</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_fan</span>&#x000A;  <span class="ruby-identifier">fan</span> = <span class="ruby-constant">CeilingFan</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Living Room&quot;</span>)&#x000A;  <span class="ruby-identifier">fan_medium</span> = <span class="ruby-constant">CeilingFanMediumCommand</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">fan</span>)&#x000A;  <span class="ruby-identifier">fan_high</span> = <span class="ruby-constant">CeilingFanHighCommand</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">fan</span>)&#x000A;  <span class="ruby-identifier">fan_off</span> = <span class="ruby-constant">CeilingFanOffCommand</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">fan</span>)&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">set_command</span>(<span class="ruby-value">1</span>, <span class="ruby-identifier">fan_medium</span>, <span class="ruby-identifier">fan_off</span>)&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">set_command</span>(<span class="ruby-value">2</span>, <span class="ruby-identifier">fan_high</span>, <span class="ruby-identifier">fan_off</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-set_light'>
+<a name='method-i-set_light'></a>
+<div class='synopsis'>
+<span class='name'>set_light</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Sets the light for the tests</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-set_light-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-set_light-source'><span class="ruby-comment"># File src/control_test.rb, line 44</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_light</span>&#x000A;  <span class="ruby-identifier">light</span> = <span class="ruby-constant">Light</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Living Room&quot;</span>)&#x000A;  <span class="ruby-identifier">light_on</span> = <span class="ruby-constant">LightOnCommand</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">light</span>)&#x000A;  <span class="ruby-identifier">light_off</span> = <span class="ruby-constant">LightOffCommand</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">light</span>)&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">set_command</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">light_on</span>, <span class="ruby-identifier">light_off</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-set_stdout'>
+<a name='method-i-set_stdout'></a>
+<div class='synopsis'>
+<span class='name'>set_stdout</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Sets the stdout to old_stdout</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-set_stdout-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-set_stdout-source'><span class="ruby-comment"># File src/control_test.rb, line 32</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_stdout</span>&#x000A;  <span class="ruby-ivar">@out</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>&#x000A;  <span class="ruby-ivar">@old_stdout</span> = <span class="ruby-identifier">$stdout</span>&#x000A;  <span class="ruby-identifier">$stdout</span> = <span class="ruby-ivar">@out</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-setup'>
+<a name='method-i-setup'></a>
+<div class='synopsis'>
+<span class='name'>setup</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Prepares the data for creating the <a href="ControlTest.html"><code>ControlTest</code></a></p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-setup-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-setup-source'><span class="ruby-comment"># File src/control_test.rb, line 19</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>&#x000A;  <span class="ruby-identifier">set_stdout</span>&#x000A;  <span class="ruby-ivar">@rc</span> = <span class="ruby-constant">RemoteControlWithUndo</span>.<span class="ruby-identifier">new</span>&#x000A;  <span class="ruby-identifier">set_light</span>&#x000A;  <span class="ruby-identifier">set_fan</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-teardown'>
+<a name='method-i-teardown'></a>
+<div class='synopsis'>
+<span class='name'>teardown</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Invokes the <a href="ControlTest.html#method-i-reset_stdout"><code>reset_stdout</code></a> method</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-teardown-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-teardown-source'><span class="ruby-comment"># File src/control_test.rb, line 27</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teardown</span>&#x000A;  <span class="ruby-identifier">reset_stdout</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_fan'>
+<a name='method-i-test_fan'></a>
+<div class='synopsis'>
+<span class='name'>test_fan</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Tests the Fan instances commands</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_fan-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_fan-source'><span class="ruby-comment"># File src/control_test.rb, line 99</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_fan</span>&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">on_button_was_pushed</span>(<span class="ruby-value">1</span>)&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">off_button_was_pushed</span>(<span class="ruby-value">1</span>)&#x000A;  <span class="ruby-identifier">p</span> <span class="ruby-ivar">@rc</span>&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">undo_button_was_pushed</span>&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">on_button_was_pushed</span>(<span class="ruby-value">2</span>)&#x000A;  <span class="ruby-identifier">p</span> <span class="ruby-ivar">@rc</span>&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">undo_button_was_pushed</span>&#x000A;  <span class="ruby-identifier">assert_equal</span>                                                \&#x000A;    <span class="ruby-string">&quot;Living Room ceiling fan is on medium\n&quot;</span>                  \&#x000A;    <span class="ruby-string">&quot;Living Room ceiling fan is off\n&quot;</span>                        \&#x000A;    <span class="ruby-string">&quot;\n------ Remote Control -------\n&quot;</span>                       \&#x000A;    <span class="ruby-string">&quot;[slot 0] LightOnCommand  LightOffCommand\n&quot;</span>              \&#x000A;    <span class="ruby-string">&quot;[slot 1] CeilingFanMediumCommand  CeilingFanOffCommand\n&quot;</span>\&#x000A;    <span class="ruby-string">&quot;[slot 2] CeilingFanHighCommand  CeilingFanOffCommand\n&quot;</span>  \&#x000A;    <span class="ruby-string">&quot;[slot 3] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[slot 4] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[slot 5] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[slot 6] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[undo] CeilingFanOffCommand\n\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;Living Room ceiling fan is on medium\n&quot;</span>                  \&#x000A;    <span class="ruby-string">&quot;Living Room ceiling fan is on high\n&quot;</span>                    \&#x000A;    <span class="ruby-string">&quot;\n------ Remote Control -------\n&quot;</span>                       \&#x000A;    <span class="ruby-string">&quot;[slot 0] LightOnCommand  LightOffCommand\n&quot;</span>              \&#x000A;    <span class="ruby-string">&quot;[slot 1] CeilingFanMediumCommand  CeilingFanOffCommand\n&quot;</span>\&#x000A;    <span class="ruby-string">&quot;[slot 2] CeilingFanHighCommand  CeilingFanOffCommand\n&quot;</span>  \&#x000A;    <span class="ruby-string">&quot;[slot 3] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[slot 4] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[slot 5] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[slot 6] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[undo] CeilingFanHighCommand\n\n&quot;</span>                        \&#x000A;    <span class="ruby-string">&quot;Living Room ceiling fan is on medium\n&quot;</span>, <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">string</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_light'>
+<a name='method-i-test_light'></a>
+<div class='synopsis'>
+<span class='name'>test_light</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Tests the <a href="Light.html"><code>Light</code></a> instances commands</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_light-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_light-source'><span class="ruby-comment"># File src/control_test.rb, line 62</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_light</span>&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">on_button_was_pushed</span>(<span class="ruby-value">0</span>)&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">off_button_was_pushed</span>(<span class="ruby-value">0</span>)&#x000A;  <span class="ruby-identifier">p</span> <span class="ruby-ivar">@rc</span>&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">undo_button_was_pushed</span>&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">off_button_was_pushed</span>(<span class="ruby-value">0</span>)&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">on_button_was_pushed</span>(<span class="ruby-value">0</span>)&#x000A;  <span class="ruby-identifier">p</span> <span class="ruby-ivar">@rc</span>&#x000A;  <span class="ruby-ivar">@rc</span>.<span class="ruby-identifier">undo_button_was_pushed</span>&#x000A;  <span class="ruby-identifier">assert_equal</span>                                                \&#x000A;    <span class="ruby-string">&quot;Light is on\n&quot;</span>                                           \&#x000A;    <span class="ruby-string">&quot;Light is off\n&quot;</span>                                          \&#x000A;    <span class="ruby-string">&quot;\n------ Remote Control -------\n&quot;</span>                       \&#x000A;    <span class="ruby-string">&quot;[slot 0] LightOnCommand  LightOffCommand\n&quot;</span>              \&#x000A;    <span class="ruby-string">&quot;[slot 1] CeilingFanMediumCommand  CeilingFanOffCommand\n&quot;</span>\&#x000A;    <span class="ruby-string">&quot;[slot 2] CeilingFanHighCommand  CeilingFanOffCommand\n&quot;</span>  \&#x000A;    <span class="ruby-string">&quot;[slot 3] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[slot 4] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[slot 5] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[slot 6] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[undo] LightOffCommand\n\n&quot;</span>                              \&#x000A;    <span class="ruby-string">&quot;Light is on\n&quot;</span>                                           \&#x000A;    <span class="ruby-string">&quot;Light is off\n&quot;</span>                                          \&#x000A;    <span class="ruby-string">&quot;Light is on\n&quot;</span>                                           \&#x000A;    <span class="ruby-string">&quot;\n------ Remote Control -------\n&quot;</span>                       \&#x000A;    <span class="ruby-string">&quot;[slot 0] LightOnCommand  LightOffCommand\n&quot;</span>              \&#x000A;    <span class="ruby-string">&quot;[slot 1] CeilingFanMediumCommand  CeilingFanOffCommand\n&quot;</span>\&#x000A;    <span class="ruby-string">&quot;[slot 2] CeilingFanHighCommand  CeilingFanOffCommand\n&quot;</span>  \&#x000A;    <span class="ruby-string">&quot;[slot 3] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[slot 4] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[slot 5] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[slot 6] NoCommand  NoCommand\n&quot;</span>                         \&#x000A;    <span class="ruby-string">&quot;[undo] LightOnCommand\n\n&quot;</span>                               \&#x000A;    <span class="ruby-string">&quot;Light is off\n&quot;</span>, <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">string</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>

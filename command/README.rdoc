@@ -1,0 +1,32 @@
+= Command Pattern
+
+This documentation was created as part of a programming
+activity for the <em>Software Design and Architecture</em>
+course (_TC3049_), at the Tecnológico de Monterrey, Campus
+Estado de México.
+
+== Authors
+
+* *A01372812* <em>José Javier Rodríguez Mota</em>
+* *A01379228* <em>Adrián Méndez López</em>
+
+== Overview
+
+The general idea of the <b>Command Pattern</b> is to separates out something
+that changes from something that does not change.
+The Command Pattern is structurally very simple.
+It consists of a number of classes that all share a common interface.
+
+The UML diagram for this programming activity is as follows:
+
+rdoc-image:img/command_uml.png
+
+To test the program, inside the +src+ folder type the following
+instruction at the command line:
+
+    ruby -I . -w command_test.rb
+
+== References
+
+- \R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley,
+2007.
