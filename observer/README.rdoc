@@ -11,7 +11,10 @@ Tecnológico de Monterrey, Campus Estado de México.
 
 == Overview
 
-BLA.
+he general idea of the <b>Observer Pattern</b> allows you to build components
+that know about the activities of other components without having to tightly
+couple everything together in an unmanageable mess of code-flavored spaghetti by creating a clean interface
+between the source of the news (the observable object) and the consumer of that news (the observers).
 
 The UML diagram for this programming activity is as follows:
 

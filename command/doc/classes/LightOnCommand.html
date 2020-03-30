@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>LightOnCommand</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='class' id='wrapper'>
+<div class='header'>
+<h1 class='name'><span class='type'>class</span>
+LightOnCommand
+</h1>
+<ol class='paths'>
+<li>
+<a href="../files/src/control_rb.html">src/control.rb</a>
+</li>
+</ol>
+<div class='parent'>
+Superclass:
+<strong><a href="NoCommand.html">NoCommand</a></strong>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'>
+<p>A class that models the <a href="LightOnCommand.html"><code>LightOnCommand</code></a> instance</p>
+</div>
+<div id='method-list'>
+<h2>Methods</h2>
+<h3>Public Class</h3>
+<ol>
+<li><a href="#method-c-new">new</a></li>
+</ol>
+<h3>Public Instance</h3>
+<ol>
+<li><a href="#method-i-execute">execute</a></li>
+<li><a href="#method-i-undo">undo</a></li>
+</ol>
+</div>
+<div id='context'>
+</div>
+<div id='section'>
+<div id='constants-list'>
+<h2>Constants</h2>
+<div class='name-list'>
+<table summary='Constants'>
+<tr class='top-aligned-row context-row'>
+<td class='context-item-name'>OFF</td>
+<td>=</td>
+<td class='context-item-value'>0</td>
+<td>&nbsp;</td>
+<td class='context-item-desc'>
+<p>Off value</p>
+</td>
+</tr>
+<tr class='top-aligned-row context-row'>
+<td class='context-item-name'>ON</td>
+<td>=</td>
+<td class='context-item-value'>100</td>
+<td>&nbsp;</td>
+<td class='context-item-desc'>
+<p>On value</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id='methods'>
+<h2>Public Class methods</h2>
+<div class='method public-class' id='method-method-c-new'>
+<a name='method-c-new'></a>
+<div class='synopsis'>
+<span class='name'>new</span>
+<span class='arguments'>(light)</span>
+
+</div>
+<div class='description'>
+
+<p>Initialize the instances params: light</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-c-new-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-c-new-source'><span class="ruby-comment"># File src/control.rb, line 92</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">light</span>)&#x000A;  <span class="ruby-ivar">@light</span> = <span class="ruby-identifier">light</span>&#x000A;  <span class="ruby-ivar">@last_level</span> = <span class="ruby-identifier">light</span>.<span class="ruby-identifier">level</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<h2>Public Instance methods</h2>
+<div class='method public-instance' id='method-method-i-execute'>
+<a name='method-i-execute'></a>
+<div class='synopsis'>
+<span class='name'>execute</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Execute action. Invokes light class action</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-execute-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-execute-source'><span class="ruby-comment"># File src/control.rb, line 98</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">execute</span>&#x000A;  <span class="ruby-ivar">@last_level</span> = <span class="ruby-ivar">@light</span>.<span class="ruby-identifier">level</span>&#x000A;  <span class="ruby-ivar">@light</span>.<span class="ruby-identifier">on</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-undo'>
+<a name='method-i-undo'></a>
+<div class='synopsis'>
+<span class='name'>undo</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Undo the action and invokes the previous action</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-undo-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-undo-source'><span class="ruby-comment"># File src/control.rb, line 104</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">undo</span>&#x000A;  <span class="ruby-keyword">case</span> <span class="ruby-ivar">@last_level</span>&#x000A;  <span class="ruby-keyword">when</span> <span class="ruby-constant">ON</span>&#x000A;    <span class="ruby-ivar">@light</span>.<span class="ruby-identifier">on</span>&#x000A;  <span class="ruby-keyword">when</span> <span class="ruby-constant">OFF</span>&#x000A;    <span class="ruby-ivar">@light</span>.<span class="ruby-identifier">off</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-ivar">@light</span>.<span class="ruby-identifier">dim</span> <span class="ruby-ivar">@last_level</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>

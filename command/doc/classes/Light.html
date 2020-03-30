@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>Light</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='class' id='wrapper'>
+<div class='header'>
+<h1 class='name'><span class='type'>class</span>
+Light
+</h1>
+<ol class='paths'>
+<li>
+<a href="../files/src/control_rb.html">src/control.rb</a>
+</li>
+</ol>
+<div class='parent'>
+Superclass:
+<strong>Object</strong>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'>
+<p>A class that models the <a href="Light.html"><code>Light</code></a> instance</p>
+</div>
+<div id='method-list'>
+<h2>Methods</h2>
+<h3>Public Class</h3>
+<ol>
+<li><a href="#method-c-new">new</a></li>
+</ol>
+<h3>Public Instance</h3>
+<ol>
+<li><a href="#method-i-dim">dim</a></li>
+<li><a href="#attribute-i-level">level</a></li>
+<li><a href="#method-i-off">off</a></li>
+<li><a href="#method-i-on">on</a></li>
+</ol>
+</div>
+<div id='context'>
+</div>
+<div id='section'>
+<div id='attribute-list'>
+<h2 class='section-bar'>Attributes</h2>
+<div class='name-list'>
+<table>
+<tr class='top-aligned-row context-row'>
+<td class='context-item-name'>
+<a name='attribute-i-level'>level</a>
+</td>
+<td class='context-item-value'>[R]</td>
+<td class='context-item-desc'>
+<p>Getter for level</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id='methods'>
+<h2>Public Class methods</h2>
+<div class='method public-class' id='method-method-c-new'>
+<a name='method-c-new'></a>
+<div class='synopsis'>
+<span class='name'>new</span>
+<span class='arguments'>(location)</span>
+
+</div>
+<div class='description'>
+
+<p>Initialize the instances params: location</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-c-new-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-c-new-source'><span class="ruby-comment"># File src/control.rb, line 249</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">location</span>)&#x000A;  <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>&#x000A;  <span class="ruby-ivar">@level</span> = <span class="ruby-value">0</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<h2>Public Instance methods</h2>
+<div class='method public-instance' id='method-method-i-dim'>
+<a name='method-i-dim'></a>
+<div class='synopsis'>
+<span class='name'>dim</span>
+<span class='arguments'>(level)</span>
+
+</div>
+<div class='description'>
+
+<p>Action when dim button is pushed params: level</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-dim-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-dim-source'><span class="ruby-comment"># File src/control.rb, line 268</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dim</span>(<span class="ruby-identifier">level</span>)&#x000A;  <span class="ruby-ivar">@level</span> = <span class="ruby-identifier">level</span>&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">level</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>&#x000A;    <span class="ruby-identifier">off</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Light is dimmed to #{@level}%&quot;</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-off'>
+<a name='method-i-off'></a>
+<div class='synopsis'>
+<span class='name'>off</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Action when off button is pushed</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-off-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-off-source'><span class="ruby-comment"># File src/control.rb, line 261</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">off</span>&#x000A;  <span class="ruby-ivar">@level</span> = <span class="ruby-value">0</span>&#x000A;  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Light is off&quot;</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-on'>
+<a name='method-i-on'></a>
+<div class='synopsis'>
+<span class='name'>on</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Action when on button is pushed</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-on-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-on-source'><span class="ruby-comment"># File src/control.rb, line 255</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">on</span>&#x000A;  <span class="ruby-ivar">@level</span> = <span class="ruby-value">100</span>&#x000A;  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Light is on&quot;</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>

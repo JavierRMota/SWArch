@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>CeilingFan</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='class' id='wrapper'>
+<div class='header'>
+<h1 class='name'><span class='type'>class</span>
+CeilingFan
+</h1>
+<ol class='paths'>
+<li>
+<a href="../files/src/control_rb.html">src/control.rb</a>
+</li>
+</ol>
+<div class='parent'>
+Superclass:
+<strong>Object</strong>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'>
+<p>A class that models the <a href="CeilingFan.html"><code>CeilingFan</code></a> instance</p>
+</div>
+<div id='method-list'>
+<h2>Methods</h2>
+<h3>Public Class</h3>
+<ol>
+<li><a href="#method-c-new">new</a></li>
+</ol>
+<h3>Public Instance</h3>
+<ol>
+<li><a href="#method-i-high">high</a></li>
+<li><a href="#method-i-low">low</a></li>
+<li><a href="#method-i-medium">medium</a></li>
+<li><a href="#method-i-off">off</a></li>
+<li><a href="#attribute-i-speed">speed</a></li>
+</ol>
+</div>
+<div id='context'>
+</div>
+<div id='section'>
+<div id='constants-list'>
+<h2>Constants</h2>
+<div class='name-list'>
+<table summary='Constants'>
+<tr class='top-aligned-row context-row'>
+<td class='context-item-name'>HIGH</td>
+<td>=</td>
+<td class='context-item-value'>3</td>
+<td>&nbsp;</td>
+<td class='context-item-desc'>
+<pre>Access these constants from outside this class as
+CeilingFan::HIGH, CeilingFan::MEDIUM, and so on.</pre>
+
+<p>High Speed</p>
+</td>
+</tr>
+<tr class='top-aligned-row context-row'>
+<td class='context-item-name'>LOW</td>
+<td>=</td>
+<td class='context-item-value'>1</td>
+<td>&nbsp;</td>
+<td class='context-item-desc'>
+<p>Low Speed</p>
+</td>
+</tr>
+<tr class='top-aligned-row context-row'>
+<td class='context-item-name'>MEDIUM</td>
+<td>=</td>
+<td class='context-item-value'>2</td>
+<td>&nbsp;</td>
+<td class='context-item-desc'>
+<p>Medium Speed</p>
+</td>
+</tr>
+<tr class='top-aligned-row context-row'>
+<td class='context-item-name'>OFF</td>
+<td>=</td>
+<td class='context-item-value'>0</td>
+<td>&nbsp;</td>
+<td class='context-item-desc'>
+<p>Off Speed</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id='attribute-list'>
+<h2 class='section-bar'>Attributes</h2>
+<div class='name-list'>
+<table>
+<tr class='top-aligned-row context-row'>
+<td class='context-item-name'>
+<a name='attribute-i-speed'>speed</a>
+</td>
+<td class='context-item-value'>[R]</td>
+<td class='context-item-desc'>
+<p>Getter for speed</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id='methods'>
+<h2>Public Class methods</h2>
+<div class='method public-class' id='method-method-c-new'>
+<a name='method-c-new'></a>
+<div class='synopsis'>
+<span class='name'>new</span>
+<span class='arguments'>(location)</span>
+
+</div>
+<div class='description'>
+
+<p>Initialize the instances params: location</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-c-new-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-c-new-source'><span class="ruby-comment"># File src/control.rb, line 298</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> (<span class="ruby-identifier">location</span>)&#x000A;  <span class="ruby-ivar">@location</span> = <span class="ruby-identifier">location</span>&#x000A;  <span class="ruby-ivar">@speed</span> = <span class="ruby-constant">OFF</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<h2>Public Instance methods</h2>
+<div class='method public-instance' id='method-method-i-high'>
+<a name='method-i-high'></a>
+<div class='synopsis'>
+<span class='name'>high</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Action when high button is pushed</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-high-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-high-source'><span class="ruby-comment"># File src/control.rb, line 304</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">high</span>&#x000A;  <span class="ruby-ivar">@speed</span> = <span class="ruby-constant">HIGH</span>&#x000A;  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{@location} ceiling fan is on high&quot;</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-low'>
+<a name='method-i-low'></a>
+<div class='synopsis'>
+<span class='name'>low</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Action when low button is pushed</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-low-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-low-source'><span class="ruby-comment"># File src/control.rb, line 316</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">low</span>&#x000A;  <span class="ruby-ivar">@speed</span> = <span class="ruby-constant">LOW</span>&#x000A;  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{@location} ceiling fan is on low&quot;</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-medium'>
+<a name='method-i-medium'></a>
+<div class='synopsis'>
+<span class='name'>medium</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Action when medium button is pushed</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-medium-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-medium-source'><span class="ruby-comment"># File src/control.rb, line 310</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">medium</span>&#x000A;  <span class="ruby-ivar">@speed</span> = <span class="ruby-constant">MEDIUM</span>&#x000A;  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{@location} ceiling fan is on medium&quot;</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-off'>
+<a name='method-i-off'></a>
+<div class='synopsis'>
+<span class='name'>off</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Action when off button is pushed</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-off-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-off-source'><span class="ruby-comment"># File src/control.rb, line 322</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">off</span>&#x000A;  <span class="ruby-ivar">@speed</span> = <span class="ruby-constant">OFF</span>&#x000A;  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{@location} ceiling fan is off&quot;</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>
