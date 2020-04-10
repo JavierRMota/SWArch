@@ -1,5 +1,5 @@
 # File name: control.rb
-# Observer Command Pattern
+# Command Pattern
 # Date: 29-mar-2020
 # Authors:
 #          A01372812 José Javier Rodríguez Mota
