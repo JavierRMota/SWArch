@@ -4,9 +4,6 @@
 #          A01372812 José Javier Rodríguez Mota
 #          A01379228 Adrián Méndez López
 
-# The source code contained in this file demonstrates how to
-# implement the <em>command pattern</em>.
-
 # File: control.rb
 
 # A class that models the RemoteControlWithUndo instance
