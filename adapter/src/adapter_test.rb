@@ -11,8 +11,10 @@ require 'minitest/autorun'
 require './simple_queue'
 require './queue_adapter'
 
+#A class that tests queue_adapter.rb.
 class QueueAdapterTest < Minitest::Test
 
+  # Tests the functionality of the Queue Adapter
   def test_queue_adapter
     q = SimpleQueue.new
     qa = QueueAdapter.new(q)
