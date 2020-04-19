@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>Milk</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='class' id='wrapper'>
+<div class='header'>
+<h1 class='name'><span class='type'>class</span>
+Milk
+</h1>
+<ol class='paths'>
+<li>
+<a href="../files/src/coffee_rb.html">src/coffee.rb</a>
+</li>
+</ol>
+<div class='parent'>
+Superclass:
+<strong><a href="CondimentDecorator.html">CondimentDecorator</a></strong>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'>
+<p><a href="Milk.html"><code>Milk</code></a> Class. Inherits from <a href="CondimentDecorator.html"><code>CondimentDecorator</code></a>.</p>
+</div>
+<div id='method-list'>
+<h2>Methods</h2>
+<h3>Public Instance</h3>
+<ol>
+<li><a href="#method-i-cost">cost</a></li>
+<li><a href="#method-i-description">description</a></li>
+</ol>
+</div>
+<div id='context'>
+</div>
+<div id='section'>
+<div id='methods'>
+<h2>Public Instance methods</h2>
+<div class='method public-instance' id='method-method-i-cost'>
+<a name='method-i-cost'></a>
+<div class='synopsis'>
+<span class='name'>cost</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Increase the cost of the beverage.</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-cost-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-cost-source'><span class="ruby-comment"># File src/coffee.rb, line 124</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cost</span>&#x000A;    <span class="ruby-ivar">@beverage</span>.<span class="ruby-identifier">cost</span> <span class="ruby-operator">+=</span> <span class="ruby-value">0.10</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-description'>
+<a name='method-i-description'></a>
+<div class='synopsis'>
+<span class='name'>description</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Updates the description of the beverage.</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-description-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-description-source'><span class="ruby-comment"># File src/coffee.rb, line 119</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">description</span>&#x000A;    <span class="ruby-ivar">@beverage</span>.<span class="ruby-identifier">description</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;, Milk&quot;</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>
