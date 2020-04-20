@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>CoffeeTest</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='class' id='wrapper'>
+<div class='header'>
+<h1 class='name'><span class='type'>class</span>
+CoffeeTest
+</h1>
+<ol class='paths'>
+<li>
+<a href="../files/src/coffee_test_rb.html">src/coffee_test.rb</a>
+</li>
+</ol>
+<div class='parent'>
+Superclass:
+<strong>Minitest::Test</strong>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'>
+<p>The source code contained in this file test the implementation of the <em>Decorator Pattern</em>.</p>
+</div>
+<div id='method-list'>
+<h2>Methods</h2>
+<h3>Public Instance</h3>
+<ol>
+<li><a href="#method-i-test_dark_roast">test_dark_roast</a></li>
+<li><a href="#method-i-test_espresso">test_espresso</a></li>
+<li><a href="#method-i-test_house_blend">test_house_blend</a></li>
+</ol>
+</div>
+<div id='context'>
+</div>
+<div id='section'>
+<div id='methods'>
+<h2>Public Instance methods</h2>
+<div class='method public-instance' id='method-method-i-test_dark_roast'>
+<a name='method-i-test_dark_roast'></a>
+<div class='synopsis'>
+<span class='name'>test_dark_roast</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Test the initialization of a Dark Roast coffee with condiments.</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_dark_roast-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_dark_roast-source'><span class="ruby-comment"># File src/coffee_test.rb, line 26</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_dark_roast</span>&#x000A;  <span class="ruby-identifier">beverage</span> = <span class="ruby-constant">DarkRoast</span>.<span class="ruby-identifier">new</span>&#x000A;  <span class="ruby-identifier">beverage</span> = <span class="ruby-constant">Milk</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">beverage</span>)&#x000A;  <span class="ruby-identifier">beverage</span> = <span class="ruby-constant">Mocha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">beverage</span>)&#x000A;  <span class="ruby-identifier">beverage</span> = <span class="ruby-constant">Mocha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">beverage</span>)&#x000A;  <span class="ruby-identifier">beverage</span> = <span class="ruby-constant">Whip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">beverage</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;Dark Roast Coffee, Milk, Mocha, Mocha, Whip&quot;</span>,&#x000A;               <span class="ruby-identifier">beverage</span>.<span class="ruby-identifier">description</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">1.59</span>, <span class="ruby-identifier">beverage</span>.<span class="ruby-identifier">cost</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_espresso'>
+<a name='method-i-test_espresso'></a>
+<div class='synopsis'>
+<span class='name'>test_espresso</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Test the initialization of an espresso.</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_espresso-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_espresso-source'><span class="ruby-comment"># File src/coffee_test.rb, line 18</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_espresso</span>&#x000A;  <span class="ruby-identifier">beverage</span> = <span class="ruby-constant">Espresso</span>.<span class="ruby-identifier">new</span>&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;Espresso&quot;</span>, <span class="ruby-identifier">beverage</span>.<span class="ruby-identifier">description</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">1.99</span>, <span class="ruby-identifier">beverage</span>.<span class="ruby-identifier">cost</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_house_blend'>
+<a name='method-i-test_house_blend'></a>
+<div class='synopsis'>
+<span class='name'>test_house_blend</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Test the initialization of a House Blend coffee with condiments.</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_house_blend-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_house_blend-source'><span class="ruby-comment"># File src/coffee_test.rb, line 38</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_house_blend</span>&#x000A;  <span class="ruby-identifier">beverage</span> = <span class="ruby-constant">HouseBlend</span>.<span class="ruby-identifier">new</span>&#x000A;  <span class="ruby-identifier">beverage</span> = <span class="ruby-constant">Soy</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">beverage</span>)&#x000A;  <span class="ruby-identifier">beverage</span> = <span class="ruby-constant">Mocha</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">beverage</span>)&#x000A;  <span class="ruby-identifier">beverage</span> = <span class="ruby-constant">Whip</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">beverage</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;House Blend Coffee, Soy, Mocha, Whip&quot;</span>,&#x000A;               <span class="ruby-identifier">beverage</span>.<span class="ruby-identifier">description</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">1.34</span>, <span class="ruby-identifier">beverage</span>.<span class="ruby-identifier">cost</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>
