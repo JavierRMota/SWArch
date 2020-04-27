@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>JakenponTest</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='class' id='wrapper'>
+<div class='header'>
+<h1 class='name'><span class='type'>class</span>
+JakenponTest
+</h1>
+<ol class='paths'>
+<li>
+<a href="../files/src/jankenpon_test_rb.html">src/jankenpon_test.rb</a>
+</li>
+</ol>
+<div class='parent'>
+Superclass:
+<strong>Minitest::Test</strong>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'>
+<p>Class JankenponTest - Tests jankenpon.rb file</p>
+</div>
+<div id='method-list'>
+<h2>Methods</h2>
+<h3>Public Instance</h3>
+<ol>
+<li><a href="#method-i-setup">setup</a></li>
+<li><a href="#method-i-teardown">teardown</a></li>
+<li><a href="#method-i-test_dsl_1">test_dsl_1</a></li>
+<li><a href="#method-i-test_dsl_2">test_dsl_2</a></li>
+<li><a href="#method-i-test_dsl_3">test_dsl_3</a></li>
+<li><a href="#method-i-test_dsl_4">test_dsl_4</a></li>
+<li><a href="#method-i-test_dsl_5">test_dsl_5</a></li>
+<li><a href="#method-i-test_dsl_6">test_dsl_6</a></li>
+<li><a href="#method-i-test_dsl_7">test_dsl_7</a></li>
+<li><a href="#method-i-test_dsl_8">test_dsl_8</a></li>
+<li><a href="#method-i-test_dsl_9">test_dsl_9</a></li>
+<li><a href="#method-i-test_simple_cases_minus">test_simple_cases_minus</a></li>
+<li><a href="#method-i-test_simple_cases_plus">test_simple_cases_plus</a></li>
+</ol>
+</div>
+<div id='context'>
+</div>
+<div id='section'>
+<div id='methods'>
+<h2>Public Instance methods</h2>
+<div class='method public-instance' id='method-method-i-setup'>
+<a name='method-i-setup'></a>
+<div class='synopsis'>
+<span class='name'>setup</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Prepares the data for creating the JankenponTest</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-setup-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-setup-source'><span class="ruby-comment"># File src/jankenpon_test.rb, line 16</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>&#x000A;  <span class="ruby-ivar">@old_stdout</span> = <span class="ruby-identifier">$stdout</span>&#x000A;  <span class="ruby-ivar">@out</span> = <span class="ruby-identifier">$stdout</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-teardown'>
+<a name='method-i-teardown'></a>
+<div class='synopsis'>
+<span class='name'>teardown</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Sets the stdout to old_stdout</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-teardown-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-teardown-source'><span class="ruby-comment"># File src/jankenpon_test.rb, line 22</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teardown</span>&#x000A;  <span class="ruby-identifier">$stdout</span> = <span class="ruby-ivar">@old_stdout</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_dsl_1'>
+<a name='method-i-test_dsl_1'></a>
+<div class='synopsis'>
+<span class='name'>test_dsl_1</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Tests the initialization of a <a href="Spock.html"><code>Spock</code></a> instance</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_dsl_1-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_dsl_1-source'><span class="ruby-comment"># File src/jankenpon_test.rb, line 85</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_dsl_1</span>&#x000A;  <span class="ruby-comment">#---------</span>&#x000A;  <span class="ruby-identifier">show</span> <span class="ruby-constant">Spock</span>&#x000A;  <span class="ruby-comment">#---------</span>&#x000A;  <span class="ruby-identifier">assert_equal</span> \&#x000A;    <span class="ruby-string">&quot;Result = Spock\n&quot;</span>, <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">string</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_dsl_2'>
+<a name='method-i-test_dsl_2'></a>
+<div class='synopsis'>
+<span class='name'>test_dsl_2</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Tests the game between <a href="Spock.html"><code>Spock</code></a> and <a href="Lizard.html"><code>Lizard</code></a> (Winner)</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_dsl_2-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_dsl_2-source'><span class="ruby-comment"># File src/jankenpon_test.rb, line 94</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_dsl_2</span>&#x000A;    <span class="ruby-comment">#------------------</span>&#x000A;    <span class="ruby-identifier">show</span> <span class="ruby-constant">Spock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Lizard</span>&#x000A;     <span class="ruby-comment">#------------------</span>&#x000A;    <span class="ruby-identifier">assert_equal</span> \&#x000A;    <span class="ruby-string">&quot;Lizard poisons Spock (winner Lizard)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Result = Lizard\n&quot;</span>, \&#x000A;    <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">string</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_dsl_3'>
+<a name='method-i-test_dsl_3'></a>
+<div class='synopsis'>
+<span class='name'>test_dsl_3</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Tests the game between <a href="Spock.html"><code>Spock</code></a> (Loser) and <a href="Lizard.html"><code>Lizard</code></a></p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_dsl_3-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_dsl_3-source'><span class="ruby-comment"># File src/jankenpon_test.rb, line 105</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_dsl_3</span>&#x000A;    <span class="ruby-comment">#------------------</span>&#x000A;    <span class="ruby-identifier">show</span> <span class="ruby-constant">Spock</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Lizard</span>&#x000A;    <span class="ruby-comment">#------------------</span>&#x000A;    <span class="ruby-identifier">assert_equal</span> \&#x000A;    <span class="ruby-string">&quot;Lizard poisons Spock (loser Spock)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Result = Spock\n&quot;</span>, \&#x000A;    <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">string</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_dsl_4'>
+<a name='method-i-test_dsl_4'></a>
+<div class='synopsis'>
+<span class='name'>test_dsl_4</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Tests the game between <a href="Spock.html"><code>Spock</code></a>, <a href="Lizard.html"><code>Lizard</code></a> and <a href="Rock.html"><code>Rock</code></a> (Winner)</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_dsl_4-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_dsl_4-source'><span class="ruby-comment"># File src/jankenpon_test.rb, line 116</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_dsl_4</span>&#x000A;   <span class="ruby-comment">#-------------------------</span>&#x000A;   <span class="ruby-identifier">show</span> <span class="ruby-constant">Spock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Lizard</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Rock</span>&#x000A;   <span class="ruby-comment">#-------------------------</span>&#x000A;   <span class="ruby-identifier">assert_equal</span> \&#x000A;    <span class="ruby-string">&quot;Lizard poisons Spock (winner Lizard)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Rock crushes Lizard (winner Rock)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Result = Rock\n&quot;</span>, \&#x000A;    <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">string</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_dsl_5'>
+<a name='method-i-test_dsl_5'></a>
+<div class='synopsis'>
+<span class='name'>test_dsl_5</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Tests the game between <a href="Spock.html"><code>Spock</code></a> (Winner) and winner from <a href="Lizard.html"><code>Lizard</code></a> and <a href="Rock.html"><code>Rock</code></a></p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_dsl_5-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_dsl_5-source'><span class="ruby-comment"># File src/jankenpon_test.rb, line 128</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_dsl_5</span>&#x000A;   <span class="ruby-comment">#---------------------------</span>&#x000A;   <span class="ruby-identifier">show</span> <span class="ruby-constant">Spock</span> <span class="ruby-operator">+</span> (<span class="ruby-constant">Lizard</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Rock</span>)&#x000A;   <span class="ruby-comment">#---------------------------</span>&#x000A;   <span class="ruby-identifier">assert_equal</span> \&#x000A;    <span class="ruby-string">&quot;Rock crushes Lizard (winner Rock)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Spock vaporizes Rock (winner Spock)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Result = Spock\n&quot;</span>, \&#x000A;    <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">string</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_dsl_6'>
+<a name='method-i-test_dsl_6'></a>
+<div class='synopsis'>
+<span class='name'>test_dsl_6</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Tests the game between <a href="Rock.html"><code>Rock</code></a>, <a href="Paper.html"><code>Paper</code></a>, <a href="Scissors.html"><code>Scissors</code></a>, <a href="Lizard.html"><code>Lizard</code></a> and <a href="Spock.html"><code>Spock</code></a> (Winner)</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_dsl_6-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_dsl_6-source'><span class="ruby-comment"># File src/jankenpon_test.rb, line 140</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_dsl_6</span>&#x000A;  <span class="ruby-comment">#--------------------------------------------</span>&#x000A;  <span class="ruby-identifier">show</span> <span class="ruby-constant">Rock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Paper</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Scissors</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Lizard</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Spock</span>&#x000A;  <span class="ruby-comment">#--------------------------------------------</span>&#x000A;  <span class="ruby-identifier">assert_equal</span> \&#x000A;    <span class="ruby-string">&quot;Paper covers Rock (winner Paper)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Scissors cut Paper (winner Scissors)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Scissors decapitate Lizard (winner Scissors)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Spock smashes Scissors (winner Spock)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Result = Spock\n&quot;</span>, \&#x000A;    <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">string</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_dsl_7'>
+<a name='method-i-test_dsl_7'></a>
+<div class='synopsis'>
+<span class='name'>test_dsl_7</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Tests the game between <a href="Rock.html"><code>Rock</code></a>, <a href="Paper.html"><code>Paper</code></a>, <a href="Scissors.html"><code>Scissors</code></a>, <a href="Lizard.html"><code>Lizard</code></a> and <a href="Spock.html"><code>Spock</code></a> (Loser)</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_dsl_7-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_dsl_7-source'><span class="ruby-comment"># File src/jankenpon_test.rb, line 154</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_dsl_7</span>&#x000A;  <span class="ruby-comment">#--------------------------------------------</span>&#x000A;  <span class="ruby-identifier">show</span> <span class="ruby-constant">Rock</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Paper</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Scissors</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Lizard</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Spock</span>&#x000A;  <span class="ruby-comment">#--------------------------------------------</span>&#x000A;  <span class="ruby-identifier">assert_equal</span> \&#x000A;    <span class="ruby-string">&quot;Paper covers Rock (loser Rock)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Rock crushes Scissors (loser Scissors)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Scissors decapitate Lizard (loser Lizard)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Lizard poisons Spock (loser Spock)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Result = Spock\n&quot;</span>, \&#x000A;    <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">string</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_dsl_8'>
+<a name='method-i-test_dsl_8'></a>
+<div class='synopsis'>
+<span class='name'>test_dsl_8</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Tests the games between <a href="Rock.html"><code>Rock</code></a> and Paper(Result), <a href="Scissors.html"><code>Scissors</code></a> and <a href="Lizard.html"><code>Lizard</code></a>, <a href="Spock.html"><code>Spock</code></a></p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_dsl_8-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_dsl_8-source'><span class="ruby-comment"># File src/jankenpon_test.rb, line 168</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_dsl_8</span>&#x000A;  <span class="ruby-comment">#-------------------------------------------------</span>&#x000A;  <span class="ruby-identifier">show</span>((<span class="ruby-constant">Rock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Paper</span>) <span class="ruby-operator">-</span> (<span class="ruby-constant">Scissors</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Lizard</span>) <span class="ruby-operator">+</span> <span class="ruby-constant">Spock</span>)&#x000A;  <span class="ruby-comment">#-------------------------------------------------</span>&#x000A;  <span class="ruby-identifier">assert_equal</span> \&#x000A;    <span class="ruby-string">&quot;Paper covers Rock (winner Paper)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Scissors decapitate Lizard (winner Scissors)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Scissors cut Paper (loser Paper)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Paper disproves Spock (winner Paper)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Result = Paper\n&quot;</span>, \&#x000A;    <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">string</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_dsl_9'>
+<a name='method-i-test_dsl_9'></a>
+<div class='synopsis'>
+<span class='name'>test_dsl_9</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Tests the games <a href="Paper.html"><code>Paper</code></a> (Tie), <a href="Spock.html"><code>Spock</code></a> and <a href="Paper.html"><code>Paper</code></a>, <a href="Lizard.html"><code>Lizard</code></a> and <a href="Rock.html"><code>Rock</code></a>.</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_dsl_9-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_dsl_9-source'><span class="ruby-comment"># File src/jankenpon_test.rb, line 182</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_dsl_9</span>&#x000A;  <span class="ruby-comment">#---------------------------------------------</span>&#x000A;  <span class="ruby-identifier">show</span> <span class="ruby-constant">Paper</span> <span class="ruby-operator">+</span> ((<span class="ruby-constant">Spock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Paper</span>) <span class="ruby-operator">-</span> <span class="ruby-constant">Lizard</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Rock</span>)&#x000A;  <span class="ruby-comment">#---------------------------------------------</span>&#x000A;  <span class="ruby-identifier">assert_equal</span> \&#x000A;    <span class="ruby-string">&quot;Paper disproves Spock (winner Paper)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Lizard eats Paper (loser Paper)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Paper covers Rock (winner Paper)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Paper tie (winner Paper)\n&quot;</span> \&#x000A;    <span class="ruby-string">&quot;Result = Paper\n&quot;</span>, \&#x000A;    <span class="ruby-ivar">@out</span>.<span class="ruby-identifier">string</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_simple_cases_minus'>
+<a name='method-i-test_simple_cases_minus'></a>
+<div class='synopsis'>
+<span class='name'>test_simple_cases_minus</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Tests the simple cases and returns losers</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_simple_cases_minus-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_simple_cases_minus-source'><span class="ruby-comment"># File src/jankenpon_test.rb, line 56</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_simple_cases_minus</span>&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Paper</span>,    (<span class="ruby-constant">Scissors</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Paper</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Paper</span>,    (<span class="ruby-constant">Paper</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Scissors</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Rock</span>,     (<span class="ruby-constant">Paper</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Rock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Rock</span>,     (<span class="ruby-constant">Rock</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Paper</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Lizard</span>,   (<span class="ruby-constant">Rock</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Lizard</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Lizard</span>,   (<span class="ruby-constant">Lizard</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Rock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Spock</span>,    (<span class="ruby-constant">Lizard</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Spock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Spock</span>,    (<span class="ruby-constant">Spock</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Lizard</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Scissors</span>, (<span class="ruby-constant">Spock</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Scissors</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Scissors</span>, (<span class="ruby-constant">Scissors</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Spock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Lizard</span>,   (<span class="ruby-constant">Scissors</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Lizard</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Lizard</span>,   (<span class="ruby-constant">Lizard</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Scissors</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Paper</span>,    (<span class="ruby-constant">Lizard</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Paper</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Paper</span>,    (<span class="ruby-constant">Paper</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Lizard</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Spock</span>,    (<span class="ruby-constant">Paper</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Spock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Spock</span>,    (<span class="ruby-constant">Spock</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Paper</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Rock</span>,     (<span class="ruby-constant">Spock</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Rock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Rock</span>,     (<span class="ruby-constant">Rock</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Spock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Scissors</span>, (<span class="ruby-constant">Rock</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Scissors</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Scissors</span>, (<span class="ruby-constant">Scissors</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Rock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Scissors</span>, (<span class="ruby-constant">Scissors</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Scissors</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Paper</span>,    (<span class="ruby-constant">Paper</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Paper</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Rock</span>,     (<span class="ruby-constant">Rock</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Rock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Lizard</span>,   (<span class="ruby-constant">Lizard</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Lizard</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Spock</span>,    (<span class="ruby-constant">Spock</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Spock</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+<div class='method public-instance' id='method-method-i-test_simple_cases_plus'>
+<a name='method-i-test_simple_cases_plus'></a>
+<div class='synopsis'>
+<span class='name'>test_simple_cases_plus</span>
+<span class='arguments'>()</span>
+
+</div>
+<div class='description'>
+
+<p>Tests the simple cases and returns winners</p>
+
+</div>
+<div class='source'>
+<a class='source-toggle' href='#' onclick='toggleCode(&#39;method-i-test_simple_cases_plus-source&#39;); return false'>
+[show source]
+</a>
+<pre id='method-i-test_simple_cases_plus-source'><span class="ruby-comment"># File src/jankenpon_test.rb, line 27</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_simple_cases_plus</span>&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Scissors</span>, (<span class="ruby-constant">Scissors</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Paper</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Scissors</span>, (<span class="ruby-constant">Paper</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Scissors</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Paper</span>,    (<span class="ruby-constant">Paper</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Rock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Paper</span>,    (<span class="ruby-constant">Rock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Paper</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Rock</span>,     (<span class="ruby-constant">Rock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Lizard</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Rock</span>,     (<span class="ruby-constant">Lizard</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Rock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Lizard</span>,   (<span class="ruby-constant">Lizard</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Spock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Lizard</span>,   (<span class="ruby-constant">Spock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Lizard</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Spock</span>,    (<span class="ruby-constant">Spock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Scissors</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Spock</span>,    (<span class="ruby-constant">Scissors</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Spock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Scissors</span>, (<span class="ruby-constant">Scissors</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Lizard</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Scissors</span>, (<span class="ruby-constant">Lizard</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Scissors</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Lizard</span>,   (<span class="ruby-constant">Lizard</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Paper</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Lizard</span>,   (<span class="ruby-constant">Paper</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Lizard</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Paper</span>,    (<span class="ruby-constant">Paper</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Spock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Paper</span>,    (<span class="ruby-constant">Spock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Paper</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Spock</span>,    (<span class="ruby-constant">Spock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Rock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Spock</span>,    (<span class="ruby-constant">Rock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Spock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Rock</span>,     (<span class="ruby-constant">Rock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Scissors</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Rock</span>,     (<span class="ruby-constant">Scissors</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Rock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Scissors</span>, (<span class="ruby-constant">Scissors</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Scissors</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Paper</span>,    (<span class="ruby-constant">Paper</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Paper</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Rock</span>,     (<span class="ruby-constant">Rock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Rock</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Lizard</span>,   (<span class="ruby-constant">Lizard</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Lizard</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Spock</span>,    (<span class="ruby-constant">Spock</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Spock</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>
