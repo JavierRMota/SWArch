@@ -1,0 +1,80 @@
+-  id: 0
+   answer: 'The function of the components of a system as well as the hierarchic relationship among them.'
+-  id: 1
+   answer: 'An encapsulated part of a software system that serves as a building block for the structure of a system.'
+-  id: 2
+   answer: 'Essential characteristics of some object, relative to the perspective of the viewer.'
+-  id: 3
+   answer: 'Hide the details of the implementation of an object.'
+-  id: 4
+   answer: 'Objects can respond to the same message in different ways in a class-dependent fashion.'
+-  id: 5
+   answer: 'A subclass may inherit the structure and behavior of its superclass.'
+-  id: 6
+   answer: 'This pattern provides a way to subscribe and unsubscribe to and from these events for any object that implements a subscriber interface.'
+-  id: 7
+   answer: 'This pattern is a behavioral design pattern that defines a skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure.'
+-  id: 8
+   answer: 'This pattern is a behavioral design pattern that turns a set of behaviors into objects and makes them interchangeable inside original context object.'
+-  id: 9
+   answer: 'Template Method Pattern.'
+-  id: 10
+   answer: 'A change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior.'
+-  id: 11
+   answer: 'The code has a particular number with a particular meaning. Create a constant, name it after the meaning, and replace the number with it.'
+-  id: 12
+   answer: 'The name of the method does not reveal its purpose. Change the name of the method.'
+-  id: 13
+   answer: 'The code has a temporary variable assigned to more than once, but it is not a loop variable nor a collecting temporary variable. Make a separate temporary variable for each assignment.'
+-  id: 14
+   answer: 'The code has a fragment that can be grouped together. Turn the fragment into a method whose name explains the purpose of the method.'
+-  id: 15
+   answer: 'If a public method is not used by any other class, make it a private method.'
+-  id: 16
+   answer: 'The code has a complicated expression. Put the result of the expression (or parts of it) in a temporary variable with a name that explains the purpose.'
+-  id: 17
+   answer: 'Instead of returning a special code to indicate an error, raise an exception.'
+-  id: 18
+   answer: 'Convert the parameter list into a hash and use the keys as names for the parameters.'
+-  id: 19
+   answer: 'The code is processing elements of a collection in a loop. Replace the loop with a collection closure method.'
+-  id: 20
+   answer: 'Same expression in two methods of the same class.'
+-  id: 21
+   answer: 'The object programs that live best and longest are those with the short methods.'
+-  id: 22
+   answer: 'A class which is trying to do much, so it shows up as too many instance variables.'
+-  id: 23
+   answer: 'Long parameter lists are hard to understand, because they become inconsistent and difficult to use.'
+-  id: 24
+   answer: 'It occurs when one class is commonly changed in different ways for different reasons.'
+-  id: 25
+   answer: 'It occurs when one change alters many classes.'
+-  id: 26
+   answer: 'A method that seems more interested in a class other than the one it actually is in.'
+-  id: 27
+   answer: 'This structural design pattern lets you compose objects into tree structures and then work with these structures as if they were individual objects.'
+-  id: 28
+   answer: 'This behavioral design pattern lets you traverse elements of a collection without exposing its underlying representations.'
+-  id: 29
+   answer: 'This behavioral design pattern turns a request into a stand-alone object that contains all information about the request.'
+-  id: 30
+   answer: 'This structural design pattern allows objects with incompatible interfaces to collaborate.'
+-  id: 31
+   answer: 'This structural design pattern lets you provide a substitute or placeholder for another object.'
+-  id: 32
+   answer: 'This structural design pattern lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.'
+-  id: 33
+   answer: 'This creational design pattern lets you ensure that a class has only one instance, while providing a global access point to this instance.'
+-  id: 34
+   answer: 'This creational design pattern provides an interface for creating objects in a superclass, but, allows subclasses to alter the type of objects that will be created.'
+-  id: 35
+   answer: 'This creational pattern lets you construct complex objects step by step and allows to produce different types and representations of an object using the same construction code.'
+-  id: 36
+   answer: 'This pattern constructs an Abstract Syntax Tree with its corresponding language that will be the rules that you will need to follow.'
+-  id: 37
+   answer: 'This pattern suggests to focus on the language itself, not on the interpreter, as it gives the user a convenient syntax for expressing a problem.'
+-  id: 38
+   answer: 'This pattern suggests us to take advantage of the dynamic behaviors as an alternative way to access objects that we need.'
+-  id: 39
+   answer: 'This pattern focuses on providing a starter template and attempts to anticipate the users needs.'
