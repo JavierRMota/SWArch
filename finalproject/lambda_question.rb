@@ -2,7 +2,14 @@ require 'json'
 require 'yaml'
 
 QUESTIONS = YAML.load_file('Pool.yml')
-
+class HttpStatus
+  OK = 200
+  CREATED = 201
+  ACCEPTED = 202
+  BAD_REQUEST = 400
+  METHOD_NOT_ALLOWED = 405
+  NOT_FOUND = 404
+end
 def lambda_handler(event:, context:)
   method = event['httpMethod']
   if method == 'GET'
@@ -11,7 +18,7 @@ def lambda_handler(event:, context:)
       id = query_string['id'].to_i
       if 0 <= id and id < QUESTIONS.size
         {
-          statusCode: 200,
+          statusCode: HttpStatus.OK,
           body: JSON.pretty_generate({
             id: id,
             question: QUESTIONS[id]['question'],
@@ -22,7 +29,7 @@ def lambda_handler(event:, context:)
           })
         }
       else
-        { statusCode: 404,
+        { statusCode: HttpStatus.NOT_FOUND,
           body: JSON.generate({
             error: "ID #{id} not found"
           })
@@ -30,7 +37,7 @@ def lambda_handler(event:, context:)
       end
     else
       { 
-        statusCode: 400,
+        statusCode: HttpStatus.BAD_REQUEST,
         body: JSON.generate({
           error: "ID is required."
         })
@@ -38,7 +45,7 @@ def lambda_handler(event:, context:)
     end
   else
     {
-      statusCode: 405,
+      statusCode: HttpStatus.METHOD_NOT_ALLOWED,
       body: JSON.generate({
         error: "Method not allowed: #{method}"
       })
