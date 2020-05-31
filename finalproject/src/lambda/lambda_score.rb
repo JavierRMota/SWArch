@@ -173,26 +173,61 @@ def handle_post(body)
     }
   end
 end
-def handle_get
-  response = DYNAMODB.scan(table_name: TABLE_NAME)
-  items = response.items.map{ |item|
-    item['quizzes'].each do |key, quiz|
-      quiz['questions'] = quiz['questions'].map { |question|
-        question.to_i
-      }
-      quiz['answers'] = quiz['answers'].map { |answer|
-        answer.to_i
-      }
-      quiz['score'] = quiz['score'].to_i
-    end
-    item
-  }
-  {
-    statusCode: HttpStatus::OK,
-    body: JSON.generate({
-      scores: items
-    })
-  }
+def handle_get(query)
+  if (query['name'] && query['quiz'])
+    name = query['name']
+    quiz =  query['quiz']
+    result = DYNAMODB.get_item({
+        table_name: TABLE_NAME,
+        key:{ name: name }
+      })
+      if result.item.nil? || !result.item['quizzes'].key?(quiz)
+        {
+          statusCode: HttpStatus::NOT_FOUND,
+          body: JSON.generate({
+            error: "Cannot find quiz #{quiz} from #{name}"
+          })
+        }
+      else
+        item = result.item['quizzes'][quiz]
+        item['questions'] = item['questions'].map { |question|
+          question.to_i
+        }
+        item['answers'] = item['answers'].map { |answer|
+          answer.to_i
+        }
+        item['score'] = item['score'].to_i
+        {
+          statusCode: HttpStatus::ACCEPTED,
+          body: JSON.generate({
+            name: name,
+            req_time: time,
+            score: quiz['score'],
+            questions:  item['questions'].reject{|x|  item['answers'].include? x}
+          })
+        }
+      end
+  else
+    response = DYNAMODB.scan(table_name: TABLE_NAME)
+    items = response.items.map{ |item|
+      item['quizzes'].each do |key, quiz|
+        quiz['questions'] = quiz['questions'].map { |question|
+          question.to_i
+        }
+        quiz['answers'] = quiz['answers'].map { |answer|
+          answer.to_i
+        }
+        quiz['score'] = quiz['score'].to_i
+      end
+      item
+    }
+    {
+      statusCode: HttpStatus::OK,
+      body: JSON.generate({
+        scores: items
+      })
+    }
+  end
 end
 def lambda_handler(event:, context:)
     method = event['httpMethod']
