@@ -208,8 +208,8 @@ def handle_get(query)
           statusCode: HttpStatus::ACCEPTED,
           body: JSON.generate({
             name: name,
-            req_time: time,
-            score: quiz['score'],
+            req_time: quiz,
+            score: item['score'],
             questions:  item['questions'].reject{|x|  item['answers'].include? x}
           })
         }
