@@ -25,6 +25,11 @@ get '/login' do
   erb :login, :layout => :page
 end
 
+get '/score' do
+  @title = "Score"
+  erb :score, :layout => :page
+end
+
 get '/' do
   @title = "Quiz System"
   erb :home, :layout => :page

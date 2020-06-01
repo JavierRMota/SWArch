@@ -1,1 +1,42 @@
-<h1>Login</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <style>
+      html, body, pre, code, kbd, samp {
+          font-family: "Press Start 2P";
+      }
+    </style>
+    <script src="js/login.js"></script>
+  </head>
+  <body style="background-image: url('https://i.gifer.com/Nes3.gif'); background-size: cover;">
+    <div style="margin: auto; width: 100%; padding: 75px;">
+      <!-- Head Title -->
+      <br>
+      <p align="center" style="color:white">Software Design and Architecture Quiz</p>
+      <br>
+      <!-- Title -->
+      <div class="nes-container with-title is-centered is-dark" style="width:1150px; margin: auto; display: block; text-align: center;">
+        <p class="title">Welcome!</p>
+        <p style="color:white">Please enter your initials and the number of questions to be asked.</p>
+      </div>
+      <br>
+      <!-- Input Name -->
+      <div class="nes-field" style="width:800px; margin: auto; display: block; text-align: center;">
+        <label for="nameInput" style="color:white">Your initials (e.g. Anthony Edward Stark -&gt; AES)</label>
+        <input type="text" id="nameInput" placeholder="Your initials" style="text-align: center;" class="nes-input is-dark">
+      </div>
+      <br>
+      <!-- Input Questions -->
+      <div class="nes-field" style="width: 450px; margin: auto; display: block; text-align: center;">
+        <label for="questionsInput" style="color:white">Number of questions (1-40)</label>
+        <input type="number" id="questionsInput" min="1" max="40" class="nes-input is-dark" style="text-align: center;">
+      </div>
+      <br>
+      <!-- Start button -->
+      <button type="button" onClick="startQuiz()" class="nes-btn is-primary" style="margin: auto; display: block;">Start</button>
+    </div>
+  </body>
+</html>

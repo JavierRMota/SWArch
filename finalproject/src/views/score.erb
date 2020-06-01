@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Score</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <style>
+      html, body, pre, code, kbd, samp {
+          font-family: "Press Start 2P";
+      }
+    </style>
+    <script src="js/score.js"></script>
+  </head>
+  <body style="background-image: url('https://i.gifer.com/Nes3.gif'); background-size: cover;">
+    <div style="margin: auto; width: 100%; padding: 10px;">
+      <!-- Head Title -->
+      <br>
+      <p align="center" style="color:white">Software Design and Architecture Quiz</p>
+      <br>
+      <!-- Title -->
+      <div class="nes-container with-title is-centered is-dark" style="width: 375px; margin: auto; display: block; text-align: center;">
+        <p class="title">High Scores</p>
+        <p style="color:white">You got ## points.</p>
+      </div>
+      <br>
+      <!-- High Scores -->
+      <div class="nes-table-responsive" style="width: 325px; margin: auto; display: block; text-align: center;">
+        <table class="nes-table is-bordered is-dark is-centered">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Player</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>JJRM</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>AML</td>
+              <td>13</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>NPM</td>
+              <td>10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <!-- Retry button -->
+      <button type="button" onClick="retryQuiz()" class="nes-btn is-primary" style="margin: auto; display: block;">Try again?</button>
+    </div>
+  </body>
+</html>
