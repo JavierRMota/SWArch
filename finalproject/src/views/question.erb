@@ -1,0 +1,57 @@
+<div style="margin: auto; width: 100%; padding: 10px;">
+    <!-- Head Title -->
+    <br />
+    <p align="center" style="color:white">Software Design and Architecture Quiz</p>
+    <br />
+    <!-- Title -->
+    <div class="nes-container with-title is-centered is-dark" style="width: 375px; margin: auto; display: block; text-align: center;">
+      <p class="title">QUIZ INFORMATION</p>
+      <p style="color:white">Name: <%= @name %> </p>
+      <p style="color:white">Quiz: <%= @quiz %> </p>
+      <p style="color:white">Score: <%= @score %> </p>
+    </div>
+    <br />
+    <form method="post">
+        <input name="id" value="<%= @id %>" hidden>
+        <input name="question" value="<%= @question %>" hidden>
+        <section class="nes-container is-dark">
+            <section class="message-list">
+                <section class="message -left">
+                <i class="nes-bcrikko"></i>
+                <!-- Balloon -->
+                <div class="nes-balloon from-left is-dark">
+                    <p><%= @question %></p>
+                </div>
+                </section>
+                <br />
+                <label>
+                    <input type="radio" class="nes-radio is-dark" name="answer" value="<%= @A %>" required/>
+                    <span><%= @A %></span>
+                </label>
+                <br />
+                <br />
+                <label>
+                    <input type="radio" class="nes-radio is-dark" name="answer" value="<%= @B %>" />
+                    <span><%= @B %></span>
+                </label>
+                <br />
+                <br />
+                <label>
+                    <input type="radio" class="nes-radio is-dark" name="answer" value="<%= @C %>" />
+                    <span><%= @C %></span>
+                </label>
+                <br />
+                <br />
+                <label>
+                    <input type="radio" class="nes-radio is-dark" name="answer" value="<%= @D %>" />
+                    <span><%= @D %></span>
+                </label>
+                <br />
+                <br />
+                <button type="submit" class="nes-btn is-primary" style="margin: auto; display: block;">Send</button>
+            </section>
+        </section>
+    </form>
+    <br />
+    <!-- Retry button -->
+</div>
