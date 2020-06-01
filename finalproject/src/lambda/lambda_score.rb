@@ -148,6 +148,13 @@ def handle_post(body)
           answers:[],
           score: 0
         }
+        DYNAMODB.update_item({
+          table_name: TABLE_NAME,
+          key:{ name: name },
+          update_expression: 'set quizzes = :q',
+          expression_attribute_values: {':q' => quizzes},
+          return_values: 'UPDATED_NEW'
+        })
       end
       {
         statusCode: HttpStatus::CREATED,
@@ -174,7 +181,7 @@ def handle_post(body)
   end
 end
 def handle_get(query)
-  if (query['name'] && query['quiz'])
+  if (query && query['name'] && query['quiz'])
     name = query['name']
     quiz =  query['quiz']
     result = DYNAMODB.get_item({
@@ -238,7 +245,7 @@ def lambda_handler(event:, context:)
       body = parse_body(event['body'])
       handle_post(body)
     elsif method == 'GET'
-      handle_get
+      handle_get(event['queryStringParameters'])
     else
       {
         statusCode: HttpStatus::METHOD_NOT_ALLOWED,
