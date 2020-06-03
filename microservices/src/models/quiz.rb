@@ -9,16 +9,31 @@ require 'faraday_middleware'
 require 'json'
 require './models/quiz_exception'
 
+# The +Quiz+ class is an implementation of the {Singleton
+# Pattern}[https://en.wikipedia.org/wiki/singleton_pattern].
+# It allows you to create only one instance of itself.
+# It represents the object that knows how to call the
+# quiz API
 class Quiz
 
+    #Singleton instance initialized as nil
     @@instance = nil
 
+    # SCORE endpoint constant
     SCORE = 'scores'
+    # Evaluator endpoint constant
     EVALUATOR = 'evaluator'
+    # Question endpoint constant
     QUESTION = 'question'
 
+    # Makes get_quiz private to avoid unauthorized access
     private_instance_methods :get_quiz
+    # Makes save_score private to avoid unauthorized access
+    private_instance_methods :save_score
 
+    # Initialize method
+    # Parameters: base_url and api_key
+    # Raises Exception if there exists an instance of the class
     def initialize(base_url:, api_key:)
         raise 'Cannot have two Quiz instances' if !@@instance.nil?
         @connection = Faraday.new(
@@ -34,6 +49,9 @@ class Quiz
         @@instance = self
     end
 
+    # Returns the body of the response of the API Call
+    # to get an specific quiz.
+    # Raises QuizException if the status is not 200
     def get_quiz(name,id)
         quizResp = @connection.get("#{Quiz::SCORE}?quiz=#{id}&name=#{name}")
         raise QuizException.new("Falied to get quiz, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if quizResp.status != 200
@@ -41,6 +59,9 @@ class Quiz
 
     end
 
+    # Returns the body of the response of the API Call
+    # to get an specific question.
+    # Raises QuizException if the status is not 200
     def get_question(question)
         questionResp = @connection.get("#{Quiz::QUESTION}?id=#{question}")
         raise QuizException.new("Falied to get question, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if questionResp.status != 200
@@ -48,6 +69,9 @@ class Quiz
 
     end
 
+    # Returns the next question as a
+    # JSON object.
+    # Raises QuizEndedException if there are no more question
     def get_next_question(name,id)
         quiz = self.get_quiz(name,id)
         questions = quiz["questions"]
@@ -58,6 +82,10 @@ class Quiz
 
     end
 
+    # Returns the result of the evaluation
+    # of a given question.
+    # Calls method save_score to update progress.
+    # Raises QuizException if the status is not 200
     def evaluate(name, quizId, questionId, answer)
         evaluatorReq = @connection.post(Quiz::EVALUATOR) do |req|
             req.headers['Content-Type'] = 'application/json'
@@ -72,6 +100,9 @@ class Quiz
 
     end
 
+    # Returns the body of the response of the API Call
+    # to update the progress of a specific quiz.
+    # Raises QuizException if the status is not 202
     def save_score(name,quizId,questionId,correct)
         scorePut = @connection.put(Quiz::SCORE) do |req|
             req.headers['Content-Type'] = 'application/json'
@@ -82,6 +113,9 @@ class Quiz
         scorePut.body
     end
 
+    # Returns the body of the response of the API Call
+    # to get all scores.
+    # Raises QuizException if the status is not 200
     def get_score
         score = @connection.get(SCORE)
         raise QuizException.new("Falied to get score, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if score.status != 200
