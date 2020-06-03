@@ -1,15 +1,16 @@
+# Date: 09-Jun-2020
+# File: lambda_evaluator.rb
+# Authors: A01372812 José Javier Rodríguez Mota
+#          A01379228 Adrián Méndez López
+
 require 'json'
 require 'yaml'
+require './lambda/http_status'
 
+# Answer file content constant
 ANSWERS = YAML.load_file('Evaluator.yml')
-class HttpStatus
-  OK = 200
-  CREATED = 201
-  ACCEPTED = 202
-  BAD_REQUEST = 400
-  METHOD_NOT_ALLOWED = 405
-  NOT_FOUND = 404
-end
+
+# Returns the body as a Hash or Json Object
 def parse_body(body)
   if body
     if body.is_a?(Hash)
@@ -26,6 +27,12 @@ def parse_body(body)
     {}
   end
 end
+
+# Returns the appropiate answer for a given
+# question passed through the body of the
+# request and using method post.
+# Returns status code 200 if the query
+# was succesful, or the corresponding error code.
 def lambda_handler(event:, context:)
   method = event['httpMethod']
   if method == 'POST'
