@@ -29,8 +29,17 @@ get '/score' do
 end
 
 get '/' do
-  @title = "Quiz System"
+  @title = "Quiz Application with Microservices"
   erb :home, :layout => :page
+end
+
+get '/continue' do
+  @title = "Continue Quiz"
+  erb :continue, :layout => :page
+end
+
+post '/continue' do
+  redirect "quiz/#{params["name"]}/#{params["quizId"]}"
 end
 
 get '/quiz/*/*' do |name, quizId|
@@ -49,7 +58,7 @@ get '/quiz/*/*' do |name, quizId|
   rescue QuizEndedException => e
     redirect '/score'
   rescue QuizException => e
-    @error = e
+    @error = e.to_s
     erb :error, :layout => :page
   end
 end
@@ -67,7 +76,14 @@ post '/quiz/*/*' do |name, quizId|
     @end = evaluation["end"]
     erb :solution, :layout => :page
   rescue QuizException => e
-    @error = e
+    @error = e.to_s
     erb :error, :layout => :page
   end
+end
+
+
+not_found do
+  status 404
+  @error = "Link not found"
+  erb :error, :layout => :page
 end
