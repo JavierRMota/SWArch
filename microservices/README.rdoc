@@ -1,5 +1,9 @@
 = Quiz Application with Microservices
 
+This documentation was developed as part of the final project activity for
+the <em>Software Design and Architecture</em> course (_TC3049_), at the
+Tecnológico de Monterrey, Campus Estado de México.
+
 == Authors
 
 * *A01372812* <em>José Javier Rodríguez Mota</em>
@@ -12,7 +16,7 @@ As our final project for the Software Design and Architecture class we did a Qui
 
 == Documentation
 
-If you haven’t done so already, install the Hanna Nouveau Ruby gem. At the terminal type:
+To reload the documentation, install the Hanna Nouveau Ruby gem:
 
     $ gem install hanna-nouveau
 
@@ -29,7 +33,7 @@ The directory structure for the application and its documentation is as follows:
                ├─ lambda/                Folder for the application's API running in AWS
                └─ views/                 Folder for the application’s views (ERB files).
 
-The +builddocs.sh+ shell script contains the required instructions to produce the RDoc documentation. Run the script from the +finalprject+ directory, typing at the terminal:
+The +builddocs.sh+ shell script contains the required instructions to produce the RDoc documentation. Run the script from the +microservices+ directory, typing at the terminal:
 
     $ bash builddocs.sh
 
@@ -39,13 +43,15 @@ Use any web browser to see the result.
 
 == Installing and Running the Application
 
-Use this section to explain any details on how to install and run you application.
+Install the required gem packages:
+
+   $ gem install faraday faraday_middleware sinatra
 
 You need to have Ruby 2.6 or more recent and the {Sinatra}[http://www.sinatrarb.com/] gem installed in your system to run the _Quiz_ web application. To run the server type the following command at the terminal from the +microservices/src+ directory:
 
     $ ruby -I . -w server.rb
 
-Afterwards, point your web browser the server’s root URL.
+Afterwards, point your web browser the server’s root URL port 4567 if it is not running on Cloud 9.
 
 == 4+1 Architectural View Model
 
@@ -89,28 +95,20 @@ rdoc-image:img/use_case_diagram.png
 
 == Patterns Used
 
-Briefly mention all the patterns that your application uses and identify where exactly. In our example, the following pattern are clearly used:
+We used the following patterns:
 
 - <b>Domain-Specific Language</b>: The +server.rb+ file consists of a series of Sinatra _routes_. Sinatra is a DSL for creating web applications in Ruby.
 - <b>Model-View-Controller</b>: The application follows the classical web implementation of the MVC architectural pattern. The models (+.rb+ files) and views (+.erb+ files) are stored in the corresponding +models+ and +views+ directory. The controller is contained in +server.rb+ file.
-- <b>Simple Factory</b>: The +GreeterFactory+ is used to create +Greeter+ instances by specifying the desired language during its creation.
+- <b>Simple Factory</b>: The +QuizFactory+ is used to create +Quiz+ instance with the correct parameters for the API connection.
+- <b>Singleton</b>: The +Quiz+ is a singleton class that will raise an exception in case someone tries to create a second instance.
 
-== Acknowledgments
-
-This section is optional. If somebody helped you with your project make sure to include her or his name here.
 
 == References
-
-Mention here any consulted books or web resources. Examples:
-
-- \M. Fowler. <em>UML Distilled: A Brief Guide to the Standard Object Modeling Language, 3rd Edition.</em>  Addison-Wesley, 2003.
-
-- \E. Gamma, R. Helm, R. Johnson, J. M. Vlissides. <em>Design Patterns: Elements of Reusable Object-Oriented Software.</em> Addison-Wesley, 1994.
-
-- \A. Harris, K. Haase. <em>Sinatra: Up and Running.</em> O’Reilly, 2011.
 
 - \Ph. Kruchten. <em>The 4+1 View Model of Architecture.</em> IEEE Software, vol. 12 (6), pp. 45-50, 1995. {\http://www.ics.uci.edu/~andre/ics223w2006/kruchten3.pdf}[http://www.ics.uci.edu/~andre/ics223w2006/kruchten3.pdf] Accessed April 11, 2019.
 
 - \R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley, 2007.
 
-- Ruby-Doc.org. <em>RDoc Markup Reference.</em> {\http://ruby-doc.org/stdlib-2.6.2/libdoc/rdoc/rdoc/RDoc/Markup.html}[http://ruby-doc.org/stdlib-2.6.2/libdoc/rdoc/rdoc/RDoc/Markup.html] Accessed April 11, 2019.
+- Ruby-Doc.org. <em>RDoc Markup Reference.</em> {\http://ruby-doc.org/stdlib-2.6.2/libdoc/rdoc/rdoc/RDoc/Markup.html}[http://ruby-doc.org/stdlib-2.6.2/libdoc/rdoc/rdoc/RDoc/Markup.html] Accessed June 3rd, 2020.
+
+- Sinatrarb.com. <em>SINATRA Documentation.</em> {\http://sinatrarb.com/documentation.html}[http://sinatrarb.com/documentation.html] Accessed June 3rd, 2020.
