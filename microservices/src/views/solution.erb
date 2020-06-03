@@ -7,7 +7,7 @@
     <div class="nes-container with-title is-centered is-dark" style="width: 375px; margin: auto; display: block; text-align: center;">
       <p class="title">QUIZ INFORMATION</p>
       <p style="color:white">Name: <%= @name %> </p>
-      <p style="color:white">Quiz: <%= @quiz %> </p>
+      <p style="color:white">Quiz: <%= @quizId %> </p>
       <p style="color:white">Score: <%= @score %> </p>
     </div>
     <br />
@@ -49,7 +49,7 @@
                 <%
                 end
                 %>
-                <button type="button" class="nes-btn is-primary" style="margin: auto; display: block;" onclick="window.location.href='/quiz/<%= @name %>/<%= @quiz %>'">Continue</button>
+                <button type="button" class="nes-btn is-primary" style="margin: auto; display: block;" onclick="window.location.href='/quiz/<%= @name %>/<%= @quizId %>'">Continue</button>
             </section>
         </section>
     <br />

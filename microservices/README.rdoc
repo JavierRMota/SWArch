@@ -1,0 +1,116 @@
+= Quiz Application with Microservices
+
+== Authors
+
+* *A01372812* <em>José Javier Rodríguez Mota</em>
+* *A01379228* <em>Adrián Méndez López</em>
+
+Date::      June 9th, 2020
+
+== Overview
+As our final project for the Software Design and Architecture class we did a Quiz Application with a Microservices REST API using AWS platform.
+
+== Documentation
+
+If you haven’t done so already, install the Hanna Nouveau Ruby gem. At the terminal type:
+
+    $ gem install hanna-nouveau
+
+The directory structure for the application and its documentation is as follows:
+
+    greeter/
+          ├─ doc/                        Folder produced by RDoc.
+          ├─ img/                        Folder for the documentation’s image files.
+          └─ src/                        Folder for the application’s source code.
+               ├─ public/                Folder for the server’s public documents.
+               │       └─ js/            Folder for the application’s JS files.
+               │       └─ images/        Folder for the application’s image files.
+               ├─ models/                Folder for the application’s models.
+               ├─ lambda/                Folder for the application's API running in AWS
+               └─ views/                 Folder for the application’s views (ERB files).
+
+The +builddocs.sh+ shell script contains the required instructions to produce the RDoc documentation. Run the script from the +finalprject+ directory, typing at the terminal:
+
+    $ bash builddocs.sh
+
+The root of the documentation should now be available at: +microservices/doc/index.html+
+
+Use any web browser to see the result.
+
+== Installing and Running the Application
+
+Use this section to explain any details on how to install and run you application.
+
+You need to have Ruby 2.6 or more recent and the {Sinatra}[http://www.sinatrarb.com/] gem installed in your system to run the _Quiz_ web application. To run the server type the following command at the terminal from the +microservices/src+ directory:
+
+    $ ruby -I . -w server.rb
+
+Afterwards, point your web browser the server’s root URL.
+
+== 4+1 Architectural View Model
+
+You must use Philippe Kruchten’s <b>“4+1 View Model”</b> to document your application’s architecture. I suggest using the {draw.io}[https://www.draw.io/] site to produce the required UML diagrams.
+
+=== Logical View
+
+The logical view contains information about the various parts of the system. In UML the logical view is typically modeled using <em>class diagrams</em>.
+
+For example, the following figure represents the UML class diagram for the +Greeter+ model and its factory class:
+
+rdoc-image:img/class_diagram.png
+
+You can include as many of these diagrams as you consider necessary. Note that you only need to specify the names of the classes and their relationships. Don’t include attributes or method names in these diagrams.
+
+To include an image in this document, copy it to the +img+ directory and refer it as: +rdoc-image:img/some_image.png+. You can use any web supported image format (PNG, JPEG, GIF, etc.).
+
+=== Process View
+
+The process view focuses on the runtime behavior of the system. In UML, <em>activity diagrams</em> are used to model this view.
+
+rdoc-image:img/activity_diagram.png
+
+=== Development View
+
+The development view focuses on software modules and subsystems. In UML, <em>package diagrams</em> are used to model the development view.
+
+rdoc-image:img/package_diagram.png
+
+=== Physical View
+
+The physical view describes the physical deployment of the system, revealing which pieces of software run on what pieces of hardware. In UML, <em>deployment diagrams</em> are used to model the physical view.
+
+rdoc-image:img/deployment_diagram.png
+
+=== Scenarios
+
+This view describes the functionality of the system from the perspective from outside world. It contains diagrams describing what the system is supposed to do from a black box perspective. UML <em>use case diagrams</em> are used for this view.
+
+rdoc-image:img/use_case_diagram.png
+
+== Patterns Used
+
+Briefly mention all the patterns that your application uses and identify where exactly. In our example, the following pattern are clearly used:
+
+- <b>Domain-Specific Language</b>: The +server.rb+ file consists of a series of Sinatra _routes_. Sinatra is a DSL for creating web applications in Ruby.
+- <b>Model-View-Controller</b>: The application follows the classical web implementation of the MVC architectural pattern. The models (+.rb+ files) and views (+.erb+ files) are stored in the corresponding +models+ and +views+ directory. The controller is contained in +server.rb+ file.
+- <b>Simple Factory</b>: The +GreeterFactory+ is used to create +Greeter+ instances by specifying the desired language during its creation.
+
+== Acknowledgments
+
+This section is optional. If somebody helped you with your project make sure to include her or his name here.
+
+== References
+
+Mention here any consulted books or web resources. Examples:
+
+- \M. Fowler. <em>UML Distilled: A Brief Guide to the Standard Object Modeling Language, 3rd Edition.</em>  Addison-Wesley, 2003.
+
+- \E. Gamma, R. Helm, R. Johnson, J. M. Vlissides. <em>Design Patterns: Elements of Reusable Object-Oriented Software.</em> Addison-Wesley, 1994.
+
+- \A. Harris, K. Haase. <em>Sinatra: Up and Running.</em> O’Reilly, 2011.
+
+- \Ph. Kruchten. <em>The 4+1 View Model of Architecture.</em> IEEE Software, vol. 12 (6), pp. 45-50, 1995. {\http://www.ics.uci.edu/~andre/ics223w2006/kruchten3.pdf}[http://www.ics.uci.edu/~andre/ics223w2006/kruchten3.pdf] Accessed April 11, 2019.
+
+- \R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley, 2007.
+
+- Ruby-Doc.org. <em>RDoc Markup Reference.</em> {\http://ruby-doc.org/stdlib-2.6.2/libdoc/rdoc/rdoc/RDoc/Markup.html}[http://ruby-doc.org/stdlib-2.6.2/libdoc/rdoc/rdoc/RDoc/Markup.html] Accessed April 11, 2019.
