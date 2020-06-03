@@ -9,8 +9,8 @@ require 'yaml'
 # Questions file content constant
 QUESTIONS = YAML.load_file('Pool.yml')
 
-# Returns the appropiate answer for a given
-# question passed through the query parameters
+# Returns the question information for a given
+# question id passed through the query parameters
 # of the request and using method get.
 # Returns status code 200 if the query
 # was succesful, or the corresponding error code.

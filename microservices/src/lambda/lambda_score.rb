@@ -1,18 +1,19 @@
+# Date: 09-Jun-2020
+# File: lambda_score.rb
+# Authors: A01372812 José Javier Rodríguez Mota
+#          A01379228 Adrián Méndez López
+
 require 'aws-sdk-dynamodb'
 require 'json'
 
-class HttpStatus
-  OK = 200
-  CREATED = 201
-  ACCEPTED = 202
-  BAD_REQUEST = 400
-  METHOD_NOT_ALLOWED = 405
-  NOT_FOUND = 404
-  ERROR = 500
-end
+#Dynamodb client constant
 DYNAMODB = Aws::DynamoDB::Client.new
+#Dynamodb table name constant
 TABLE_NAME = 'QuizScores'
+#Max number of questions constant
 NUMBER_OF_QUESTIONS  = 40
+
+# Returns the body as a Hash or Json Object
 def parse_body(body)
   if body
     if body.is_a?(Hash)
@@ -29,6 +30,12 @@ def parse_body(body)
     {}
   end
 end
+
+# Returns the updated score for a given
+# quiz passed through the body
+# of the request and using method put.
+# Returns status code 202 if the query
+# was succesful, or the corresponding error code.
 def handle_put(body)
   if (body.key?('name') && body.key?('time') && body.key?('question') && body.key?('answer'))
     name = body['name']
@@ -97,6 +104,12 @@ def handle_put(body)
     }
   end
 end
+
+# Returns a new quiz for a given
+# user passed through the body
+# of the request and using method post.
+# Returns status code 201 if the query
+# was succesful, or the corresponding error code.
 def handle_post(body)
   if (body['name'] &&  body['questions'])
     all = (0..(NUMBER_OF_QUESTIONS - 1)).to_a
@@ -179,6 +192,14 @@ def handle_post(body)
     }
   end
 end
+
+# Returns the quizzes for a given
+# user passed through the query parameters
+# of the request and using method get.
+# Returns all quizzes and users if no
+# query given.
+# Returns status code 200 if the query
+# was succesful, or the corresponding error code.
 def handle_get(query)
   if (query && query['name'] && query['quiz'])
     name = query['name']
@@ -235,6 +256,9 @@ def handle_get(query)
     }
   end
 end
+
+# Reads the event and assigns the
+# appropiate method to respond.
 def lambda_handler(event:, context:)
     method = event['httpMethod']
     if method == 'PUT'
