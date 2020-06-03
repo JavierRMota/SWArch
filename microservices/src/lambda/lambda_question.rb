@@ -1,15 +1,19 @@
+# Date: 09-Jun-2020
+# File: lambda_question.rb
+# Authors: A01372812 José Javier Rodríguez Mota
+#          A01379228 Adrián Méndez López
+
 require 'json'
 require 'yaml'
 
+# Questions file content constant
 QUESTIONS = YAML.load_file('Pool.yml')
-class HttpStatus
-  OK = 200
-  CREATED = 201
-  ACCEPTED = 202
-  BAD_REQUEST = 400
-  METHOD_NOT_ALLOWED = 405
-  NOT_FOUND = 404
-end
+
+# Returns the appropiate answer for a given
+# question passed through the query parameters
+# of the request and using method get.
+# Returns status code 200 if the query
+# was succesful, or the corresponding error code.
 def lambda_handler(event:, context:)
   method = event['httpMethod']
   if method == 'GET'
