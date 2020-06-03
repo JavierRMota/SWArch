@@ -49,7 +49,6 @@ def handle_put(body)
         quiz['answers'] = quiz['answers'].map{ |answers|
           answers.to_i
         }
-        puts quiz['questions']
         if (quiz['questions'].include?(question) && !quiz['answers'].include?(question))
           if (answer)
             quiz['score'] = quiz['score'].to_i + 1
@@ -205,11 +204,11 @@ def handle_get(query)
         }
         item['score'] = item['score'].to_i
         {
-          statusCode: HttpStatus::ACCEPTED,
+          statusCode: HttpStatus::OK,
           body: JSON.generate({
             name: name,
             req_time: quiz,
-            score: item['score'],
+            score: item['score'].to_i,
             questions:  item['questions'].reject{|x|  item['answers'].include? x}
           })
         }

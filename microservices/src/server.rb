@@ -64,6 +64,7 @@ post '/quiz/*/*' do |name, quizId|
     @quizId = quizId
     @correctAnswer = evaluation['answer']  
     @score = evaluation["score"]
+    @end = evaluation["end"]
     erb :solution, :layout => :page
   rescue QuizException => e
     @error = e

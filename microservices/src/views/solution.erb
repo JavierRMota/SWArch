@@ -49,7 +49,11 @@
                 <%
                 end
                 %>
+                <% if @end %>
+                <button type="button" class="nes-btn is-primary" style="margin: auto; display: block;" onclick="window.location.href='/score/<%= @name %>/<%= @quizId %>'">Finish</button>
+                <% else %>
                 <button type="button" class="nes-btn is-primary" style="margin: auto; display: block;" onclick="window.location.href='/quiz/<%= @name %>/<%= @quizId %>'">Continue</button>
+                <% end %>
             </section>
         </section>
     <br />
