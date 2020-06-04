@@ -14,7 +14,7 @@ QUIZ = QuizFactory.create
 
 # Returns a formatted tag in the form <tag class="classes">text</tag>
 def tag tag, text, classes = nil
-  "<#{tag} #{classes.nil ? '': "class='#{classes}'"}'>#{text}</#{tag}>"
+  "<#{tag} #{classes.nil? ? '': "class='#{classes}'"}'>#{text}</#{tag}>"
 end
 
 # Renders login view
