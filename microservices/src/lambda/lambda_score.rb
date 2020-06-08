@@ -75,7 +75,7 @@ def handle_put(body)
           body: JSON.generate({
             name: name,
             req_time: time,
-            score: quiz['score'],
+            score: quiz['score'].to_i,
             questions:  quiz['questions'].reject{|x|  quiz['answers'].include? x}
           })
         }
@@ -236,6 +236,7 @@ def handle_get(query)
       end
   else
     response = DYNAMODB.scan(table_name: TABLE_NAME)
+    scores = []
     items = response.items.map{ |item|
       item['quizzes'].each do |key, quiz|
         quiz['questions'] = quiz['questions'].map { |question|
@@ -245,14 +246,17 @@ def handle_get(query)
           answer.to_i
         }
         quiz['score'] = quiz['score'].to_i
+        scores << {
+          name: item['name'],
+          score: quiz['score'],
+          id: key
+        }
       end
       item
     }
     {
       statusCode: HttpStatus::OK,
-      body: JSON.generate({
-        scores: items
-      })
+      body: JSON.generate(scores.sort { |a,b| b['score'] <=> a['score'] })
     }
   end
 end

@@ -25,6 +25,14 @@ get '/login' do
 end
 
 # Renders score view with score response from API
+get '/score/*/*' do |name, quizId|
+  @title = "Score"
+  @scores = QUIZ.get_scores
+  @score = QUIZ.get_score(@scores, name, quizId)
+  erb :score, :layout => :page
+end
+
+# Renders score view with score response from API
 get '/score' do
   @title = "Score"
   @name = "score"

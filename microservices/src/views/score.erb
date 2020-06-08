@@ -6,7 +6,12 @@
       <!-- Title -->
       <div class="nes-container with-title is-centered is-dark" style="width: 375px; margin: auto; display: block; text-align: center;">
         <p class="title">High Scores</p>
-        <p style="color:white">Thanks for taking the Quiz!</p>
+        <% if @score %>
+         <p style="color:white">Thanks for taking the Quiz!</p>
+         <p style="color:white">Your score is: <%= @score %></p>
+         <% else %>
+         <p style="color:white">This is our hall of fame.</p>
+         <% end %>
       </div>
       <br>
       <!-- High Scores -->
@@ -16,6 +21,12 @@
           <th>Name</th>
           <th>Score</th>
         </tr>
+        <% @scores.each do |s|  %>
+          <tr>
+            <td><%= s['name'] %></td>
+            <td><%= s['score'] %></td>
+          </tr>
+        <% end %>
         </table>
       </div>
       <br>
