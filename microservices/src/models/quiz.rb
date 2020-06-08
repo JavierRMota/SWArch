@@ -132,7 +132,7 @@ class Quiz
     def get_scores
         score = @connection.get(Quiz::SCORE)
         raise QuizException.new("Failed to get score, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if score.status != 200
-        score.body.to_json
+        score.body.to_a.sort { |a, b| b['score'] <=> a['score'] }
     end
 
 end
