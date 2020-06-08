@@ -30,7 +30,7 @@ README.rdoc
 </div>
 <div class='last-update'>
 Last Update:
-<span class='datetime'>2020-06-08 14:19:21 -0500</span>
+<span class='datetime'>2020-06-08 21:21:58 +0000</span>
 </div>
 </div>
 <div id='content'>
@@ -62,7 +62,7 @@ Last Update:
 
 <p>The directory structure for the application and its documentation is as follows:</p>
 
-<pre>greeter/&#x000A;      ├─ doc/                        Folder produced by RDoc.&#x000A;      ├─ img/                        Folder for the documentation’s image files.&#x000A;      └─ src/                        Folder for the application’s source code.&#x000A;           ├─ public/                Folder for the server’s public documents.&#x000A;           │       └─ images/        Folder for the application’s image files.&#x000A;           ├─ models/                Folder for the application’s models.&#x000A;           ├─ lambda/                Folder for the application&#39;s API running in AWS&#x000A;           └─ views/                 Folder for the application’s views (ERB files).</pre>
+<pre>microservices/&#x000A;      ├─ doc/                        Folder produced by RDoc.&#x000A;      ├─ img/                        Folder for the documentation’s image files.&#x000A;      └─ src/                        Folder for the application’s source code.&#x000A;           ├─ public/                Folder for the server’s public documents.&#x000A;           │       └─ images/        Folder for the application’s image files.&#x000A;           ├─ models/                Folder for the application’s models.&#x000A;           ├─ lambda/                Folder for the application&#39;s API running in AWS&#x000A;           └─ views/                 Folder for the application’s views (ERB files).</pre>
 
 <p>The <code>builddocs.sh</code> shell script contains the required instructions to produce the RDoc documentation. Run the script from the <code>microservices</code> directory, typing at the terminal:</p>
 
@@ -86,41 +86,35 @@ Last Update:
 
 <h2 id="label-4-2B1+Architectural+View+Model">4+1 Architectural View Model<span><a href="#label-4-2B1+Architectural+View+Model">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>You must use Philippe Kruchten’s <strong>“4+1 View Model”</strong> to document your application’s architecture. I suggest using the <a href="https://www.draw.io/">draw.io</a> site to produce the required UML diagrams.</p>
+<p>We used Philippe Kruchten’s <strong>“4+1 View Model”</strong> to document our project’s architecture. We produced the UML diagram for each view in order to explain them.</p>
 
 <h3 id="label-Logical+View">Logical View<span><a href="#label-Logical+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<p>The logical view contains information about the various parts of the system. In UML the logical view is typically modeled using <em>class diagrams</em>.</p>
-
-<p>For example, the following figure represents the UML class diagram for the <code>Greeter</code> model and its factory class:</p>
+<p>The logical view contains information about the various parts of the system and it is modeled using <em>class diagrams</em>. The class diagram shows the classes that were implemented and their relationships: <a href="../classes/QuizFactory.html"><code>QuizFactory</code></a>, <a href="../classes/Quiz.html"><code>Quiz</code></a>, <a href="../classes/QuizException.html"><code>QuizException</code></a> and <a href="../classes/QuizEndedException.html"><code>QuizEndedException</code></a>.</p>
 
 <p><img src="img/class_diagram.png"></p>
 
-<p>You can include as many of these diagrams as you consider necessary. Note that you only need to specify the names of the classes and their relationships. Don’t include attributes or method names in these diagrams.</p>
-
-<p>To include an image in this document, copy it to the <code>img</code> directory and refer it as: <code>rdoc-image:img/some_image.png.</code> You can use any web supported image format (PNG, JPEG, GIF, etc.).</p>
-
 <h3 id="label-Process+View">Process View<span><a href="#label-Process+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<p>The process view focuses on the runtime behavior of the system. In UML, <em>activity diagrams</em> are used to model this view.</p>
+<p>The process view focuses on the runtime behavior of the system and it is modeled using <em>activity diagrams</em>. The activity diagram shows the flow that the user will follow when using the application. The user can go through the stages of: Initial Screen, Create/Continue quiz, Next Question and Score.</p>
 
 <p><img src="img/activity_diagram.png"></p>
 
 <h3 id="label-Development+View">Development View<span><a href="#label-Development+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<p>The development view focuses on software modules and subsystems. In UML, <em>package diagrams</em> are used to model the development view.</p>
+<p>The development view focuses on software modules and subsystems and it is modeled using <em>package diagrams</em>. The package diagram shows how the files are stored in the src directory. The src directory contains the server.rb file and 3 folders: views, models and lambda. Each folder contains their respective files.</p>
 
 <p><img src="img/package_diagram.png"></p>
 
 <h3 id="label-Physical+View">Physical View<span><a href="#label-Physical+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<p>The physical view describes the physical deployment of the system, revealing which pieces of software run on what pieces of hardware. In UML, <em>deployment diagrams</em> are used to model the physical view.</p>
+<p>The physical view describes the physical deployment of the system, revealing which pieces of software run on what pieces of hardware and it is modeled using <em>deployment diagrams</em>. The deployment diagram shows how the web browser, the server and the API works together in order to run the application.</p>
 
 <p><img src="img/deployment_diagram.png"></p>
 
-<h3 id="label-Scenarios">Scenarios<span><a href="#label-Scenarios">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<h3 id="label-Use+Case+View+-2F+Scenarios">Use Case View / Scenarios<span><a href="#label-Use+Case+View+-2F+Scenarios">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<p>This view describes the functionality of the system from the perspective from outside world. It contains diagrams describing what the system is supposed to do from a black box perspective. UML <em>use case diagrams</em> are used for this view.</p>
+<p>This view describes the functionality of the system from the perspective from outside world and it is modeled using <em>use case diagrams</em>. The Use Case diagram shows how the user interacts with the <a href="../classes/Quiz.html"><code>Quiz</code></a> Web Application. The user can create/continue/end a quiz, answer questions, check the solutions and scores.</p>
 
 <p><img src="img/use_case_diagram.png"></p>
 
