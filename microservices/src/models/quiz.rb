@@ -143,7 +143,7 @@ class Quiz
                 break
             end
         end
-        raise QuizException.new("Score not found") if score.nil?
+        raise QuizException.new("Score not found") if found.nil?
         found
     end
 

@@ -8,8 +8,10 @@
         <p class="title">High Scores</p>
         <% if @score %>
          <p style="color:white">Thanks for taking the Quiz!</p>
-         <p style="color:white">Your score is: @score</p>
-        <% end %>
+         <p style="color:white">Your score is: <%= @score %></p>
+         <% else %>
+         <p style="color:white">This is our hall of fame.</p>
+         <% end %>
       </div>
       <br>
       <!-- High Scores -->
