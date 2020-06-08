@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+<head>
+<title>README.rdoc</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<link href='../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/javascript'>
+  function popupCode(url) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+  
+  function toggleCode(id) {
+    var code = document.getElementById(id)
+  
+    code.style.display = code.style.display != 'block' ? 'block' : 'none'
+    return true
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+</script>
+</head>
+<body class='page'>
+<div class='file' id='wrapper'>
+<div class='header'>
+<h1 class='name'>README.rdoc
+</h1>
+<div class='paths'>
+README.rdoc
+</div>
+<div class='last-update'>
+Last Update:
+<span class='datetime'>2020-06-03 14:54:40 -0500</span>
+</div>
+</div>
+<div id='content'>
+<div id='text'>
+<div id='description'>
+<h1 id="label-Quiz+Application+with+Microservices"><a href="../classes/Quiz.html"><code>Quiz</code></a> Application with Microservices<span><a href="#label-Quiz+Application+with+Microservices">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>This documentation was developed as part of the final project activity for the <em>Software Design and Architecture</em> course (<em>TC3049</em>), at the Tecnológico de Monterrey, Campus Estado de México.</p>
+
+<h2 id="label-Authors">Authors<span><a href="#label-Authors">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p><strong>A01372812</strong> <em>José Javier Rodríguez Mota</em></p>
+</li><li>
+<p><strong>A01379228</strong> <em>Adrián Méndez López</em></p>
+</li></ul>
+<table class="rdoc-list note-list"><tbody><tr><td class='label'>Date</td><td>
+<p>June 9th, 2020</p>
+</td></tr></tbody></table>
+
+<h2 id="label-Overview">Overview<span><a href="#label-Overview">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>As our final project for the Software Design and Architecture class we did a <a href="../classes/Quiz.html"><code>Quiz</code></a> Application with a Microservices REST API using AWS platform.</p>
+
+<h2 id="label-Documentation">Documentation<span><a href="#label-Documentation">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>To reload the documentation, install the Hanna Nouveau Ruby gem:</p>
+
+<pre>$ gem install hanna-nouveau</pre>
+
+<p>The directory structure for the application and its documentation is as follows:</p>
+
+<pre>greeter/&#x000A;      ├─ doc/                        Folder produced by RDoc.&#x000A;      ├─ img/                        Folder for the documentation’s image files.&#x000A;      └─ src/                        Folder for the application’s source code.&#x000A;           ├─ public/                Folder for the server’s public documents.&#x000A;           │       └─ js/            Folder for the application’s JS files.&#x000A;           │       └─ images/        Folder for the application’s image files.&#x000A;           ├─ models/                Folder for the application’s models.&#x000A;           ├─ lambda/                Folder for the application&#39;s API running in AWS&#x000A;           └─ views/                 Folder for the application’s views (ERB files).</pre>
+
+<p>The <code>builddocs.sh</code> shell script contains the required instructions to produce the RDoc documentation. Run the script from the <code>microservices</code> directory, typing at the terminal:</p>
+
+<pre>$ bash builddocs.sh</pre>
+
+<p>The root of the documentation should now be available at: <code>microservices/doc/index.html</code></p>
+
+<p>Use any web browser to see the result.</p>
+
+<h2 id="label-Installing+and+Running+the+Application">Installing and Running the Application<span><a href="#label-Installing+and+Running+the+Application">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Install the required gem packages:</p>
+
+<pre>$ gem install faraday faraday_middleware sinatra</pre>
+
+<p>You need to have Ruby 2.6 or more recent and the <a target="_top" href="http://www.sinatrarb.com/">Sinatra</a> gem installed in your system to run the <em>Quiz</em> web application. To run the server type the following command at the terminal from the <code>microservices/src</code> directory:</p>
+
+<pre>$ ruby -I . -w server.rb</pre>
+
+<p>Afterwards, point your web browser the server’s root URL port 4567 if it is not running on Cloud 9.</p>
+
+<h2 id="label-4-2B1+Architectural+View+Model">4+1 Architectural View Model<span><a href="#label-4-2B1+Architectural+View+Model">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>You must use Philippe Kruchten’s <strong>“4+1 View Model”</strong> to document your application’s architecture. I suggest using the <a href="https://www.draw.io/">draw.io</a> site to produce the required UML diagrams.</p>
+
+<h3 id="label-Logical+View">Logical View<span><a href="#label-Logical+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The logical view contains information about the various parts of the system. In UML the logical view is typically modeled using <em>class diagrams</em>.</p>
+
+<p>For example, the following figure represents the UML class diagram for the <code>Greeter</code> model and its factory class:</p>
+
+<p><img src="img/class_diagram.png"></p>
+
+<p>You can include as many of these diagrams as you consider necessary. Note that you only need to specify the names of the classes and their relationships. Don’t include attributes or method names in these diagrams.</p>
+
+<p>To include an image in this document, copy it to the <code>img</code> directory and refer it as: <code>rdoc-image:img/some_image.png.</code> You can use any web supported image format (PNG, JPEG, GIF, etc.).</p>
+
+<h3 id="label-Process+View">Process View<span><a href="#label-Process+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The process view focuses on the runtime behavior of the system. In UML, <em>activity diagrams</em> are used to model this view.</p>
+
+<p><img src="img/activity_diagram.png"></p>
+
+<h3 id="label-Development+View">Development View<span><a href="#label-Development+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The development view focuses on software modules and subsystems. In UML, <em>package diagrams</em> are used to model the development view.</p>
+
+<p><img src="img/package_diagram.png"></p>
+
+<h3 id="label-Physical+View">Physical View<span><a href="#label-Physical+View">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The physical view describes the physical deployment of the system, revealing which pieces of software run on what pieces of hardware. In UML, <em>deployment diagrams</em> are used to model the physical view.</p>
+
+<p><img src="img/deployment_diagram.png"></p>
+
+<h3 id="label-Scenarios">Scenarios<span><a href="#label-Scenarios">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This view describes the functionality of the system from the perspective from outside world. It contains diagrams describing what the system is supposed to do from a black box perspective. UML <em>use case diagrams</em> are used for this view.</p>
+
+<p><img src="img/use_case_diagram.png"></p>
+
+<h2 id="label-Patterns+Used">Patterns Used<span><a href="#label-Patterns+Used">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>We used the following patterns:</p>
+<ul><li>
+<p><strong>Domain-Specific Language</strong>: The <code>server.rb</code> file consists of a series of Sinatra <em>routes</em>. Sinatra is a DSL for creating web applications in Ruby.</p>
+</li><li>
+<p><strong>Model-View-Controller</strong>: The application follows the classical web implementation of the MVC architectural pattern. The models (<code>.rb</code> files) and views (<code>.erb</code> files) are stored in the corresponding <code>models</code> and <code>views</code> directory. The controller is contained in <code>server.rb</code> file.</p>
+</li><li>
+<p><strong>Simple Factory</strong>: The <code>QuizFactory</code> is used to create <code>Quiz</code> instance with the correct parameters for the API connection.</p>
+</li><li>
+<p><strong>Singleton</strong>: The <code>Quiz</code> is a singleton class that will raise an exception in case someone tries to create a second instance.</p>
+</li></ul>
+
+<h2 id="label-References">References<span><a href="#label-References">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Ph. Kruchten. <em>The 4+1 View Model of Architecture.</em> IEEE Software, vol. 12 (6), pp. 45-50, 1995. <a target="_top" href="http://www.ics.uci.edu/~andre/ics223w2006/kruchten3.pdf">http://www.ics.uci.edu/~andre/ics223w2006/kruchten3.pdf</a> Accessed April 11, 2019.</p>
+</li><li>
+<p>R. Olsen. <em>Design Patterns in Ruby.</em> Addison-Wesley, 2007.</p>
+</li><li>
+<p>Ruby-Doc.org. <em>RDoc Markup Reference.</em> <a target="_top" href="http://ruby-doc.org/stdlib-2.6.2/libdoc/rdoc/rdoc/RDoc/Markup.html">http://ruby-doc.org/stdlib-2.6.2/libdoc/rdoc/rdoc/RDoc/Markup.html</a> Accessed June 3rd, 2020.</p>
+</li><li>
+<p>Sinatrarb.com. <em>SINATRA Documentation.</em> <a target="_top" href="http://sinatrarb.com/documentation.html">http://sinatrarb.com/documentation.html</a> Accessed June 3rd, 2020.</p>
+</li></ul>
+</div>
+<div id='context'>
+</div>
+
+</div>
+</div>
+
+<div id='footer-push'></div>
+</div>
+<div id='footer'>
+<a href="https://github.com/rdoc/hanna-nouveau"><strong>Hanna Nouveau</strong> RDoc template</a>
+</div>
+</body>
+</html>

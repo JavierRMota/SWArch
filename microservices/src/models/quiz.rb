@@ -135,6 +135,8 @@ class Quiz
         score.body.to_a.sort { |a, b| b['score'] <=> a['score'] }
     end
 
+    # Returns the score of a given user and quiz
+    # Raises QuizException if the quiz is not found.
     def get_score(scores, name, quizId)
         found = nil
         scores.each do |score|
