@@ -22,7 +22,7 @@ To reload the documentation, install the Hanna Nouveau Ruby gem:
 
 The directory structure for the application and its documentation is as follows:
 
-    greeter/
+    microservices/
           ├─ doc/                        Folder produced by RDoc.
           ├─ img/                        Folder for the documentation’s image files.
           └─ src/                        Folder for the application’s source code.
@@ -55,41 +55,42 @@ Afterwards, point your web browser the server’s root URL port 4567 if it is no
 
 == 4+1 Architectural View Model
 
-You must use Philippe Kruchten’s <b>“4+1 View Model”</b> to document your application’s architecture. I suggest using the {draw.io}[https://www.draw.io/] site to produce the required UML diagrams.
+We used Philippe Kruchten’s <b>“4+1 View Model”</b> to document our project’s architecture. We produced the UML diagram for each view in order to explain them.
 
 === Logical View
 
-The logical view contains information about the various parts of the system. In UML the logical view is typically modeled using <em>class diagrams</em>.
-
-For example, the following figure represents the UML class diagram for the +Greeter+ model and its factory class:
+The logical view contains information about the various parts of the system and it is modeled using <em>class diagrams</em>.
+The class diagram shows the classes that were implemented and their relationships: QuizFactory, Quiz, QuizException and QuizEndedException.
 
 rdoc-image:img/class_diagram.png
 
-You can include as many of these diagrams as you consider necessary. Note that you only need to specify the names of the classes and their relationships. Don’t include attributes or method names in these diagrams.
-
-To include an image in this document, copy it to the +img+ directory and refer it as: +rdoc-image:img/some_image.png+. You can use any web supported image format (PNG, JPEG, GIF, etc.).
-
 === Process View
 
-The process view focuses on the runtime behavior of the system. In UML, <em>activity diagrams</em> are used to model this view.
+The process view focuses on the runtime behavior of the system and it is modeled using <em>activity diagrams</em>.
+The activity diagram shows the flow that the user will follow when using the application.
+The user can go through the stages of: Initial Screen, Create/Continue quiz, Next Question and Score.
 
 rdoc-image:img/activity_diagram.png
 
 === Development View
 
-The development view focuses on software modules and subsystems. In UML, <em>package diagrams</em> are used to model the development view.
+The development view focuses on software modules and subsystems and it is modeled using <em>package diagrams</em>.
+The package diagram shows how the files are stored in the src directory.
+The src directory contains the server.rb file and 3 folders: views, models and lambda. Each folder contains their respective files.
 
 rdoc-image:img/package_diagram.png
 
 === Physical View
 
-The physical view describes the physical deployment of the system, revealing which pieces of software run on what pieces of hardware. In UML, <em>deployment diagrams</em> are used to model the physical view.
+The physical view describes the physical deployment of the system, revealing which pieces of software run on what pieces of hardware and it is modeled using <em>deployment diagrams</em>.
+The deployment diagram shows how the web browser, the server and the API works together in order to run the application.
 
 rdoc-image:img/deployment_diagram.png
 
-=== Scenarios
+=== Use Case View / Scenarios
 
-This view describes the functionality of the system from the perspective from outside world. It contains diagrams describing what the system is supposed to do from a black box perspective. UML <em>use case diagrams</em> are used for this view.
+This view describes the functionality of the system from the perspective from outside world and it is modeled using <em>use case diagrams</em>.
+The Use Case diagram shows how the user interacts with the Quiz Web Application. The user can create/continue/end a quiz, answer questions, check the solutions and scores.
 
 rdoc-image:img/use_case_diagram.png
 
