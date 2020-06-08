@@ -10,18 +10,20 @@
         <p style="color:white">Please enter your initials and the number of questions to be asked.</p>
       </div>
       <br>
-      <!-- Input Name -->
-      <div class="nes-field" style="width:800px; margin: auto; display: block; text-align: center;">
-        <label for="nameInput" style="color:white">Your initials (e.g. Anthony Edward Stark -&gt; AES)</label>
-        <input type="text" id="nameInput" placeholder="Your initials" style="text-align: center;" class="nes-input is-dark">
-      </div>
-      <br>
-      <!-- Input Questions -->
-      <div class="nes-field" style="width: 450px; margin: auto; display: block; text-align: center;">
-        <label for="questionsInput" style="color:white">Number of questions (1-40)</label>
-        <input type="number" id="questionsInput" min="1" max="40" class="nes-input is-dark" style="text-align: center;">
-      </div>
-      <br>
-      <!-- Start button -->
-      <button type="button" onClick="startQuiz()" class="nes-btn is-primary" style="margin: auto; display: block;">Start</button>
+      <!-- Login form -->
+      <form method="post">
+        <div class="nes-field" style="width:800px; margin: auto; display: block; text-align: center;">
+          <label for="nameInput" style="color:white">Your initials (e.g. Anthony Edward Stark -&gt; AES)</label>
+          <input required type="text" id="nameInput" name="name" placeholder="Your initials" style="text-align: center;" class="nes-input is-dark">
+        </div>
+        <br>
+        <!-- Input Questions -->
+        <div class="nes-field" style="width: 450px; margin: auto; display: block; text-align: center;">
+          <label for="questionsInput" style="color:white">Number of questions (1-40)</label>
+          <input required type="number" id="questionsInput" name="questions" min="1" max="40" class="nes-input is-dark" style="text-align: center;">
+        </div>
+        <br>
+        <!-- Start button -->
+        <button type="submit" class="nes-btn is-primary" style="margin: auto; display: block;">Start</button>
+      </form>
     </div>

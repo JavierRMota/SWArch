@@ -49,12 +49,25 @@ class Quiz
         @@instance = self
     end
 
+    # Create quiz method
+    # Parameters: name and questions
+    # Creates a quiz for the user with the number of questions given
+    def create_quiz(name, questions)
+        quizPost = @connection.post(Quiz::SCORE) do |req|
+            req.headers['Content-Type'] = 'application/json'
+            req.body = { name: name, questions: questions.to_i }.to_json
+        end
+
+        raise QuizException.new("Failed to create quiz, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if quizPost.status != 201
+        quizPost.body
+    end
+
     # Returns the body of the response of the API Call
     # to get an specific quiz.
     # Raises QuizException if the status is not 200
     def get_quiz(name,id)
         quizResp = @connection.get("#{Quiz::SCORE}?quiz=#{id}&name=#{name}")
-        raise QuizException.new("Falied to get quiz, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if quizResp.status != 200
+        raise QuizException.new("Failed to get quiz, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if quizResp.status != 200
         quizResp.body
 
     end
@@ -64,7 +77,7 @@ class Quiz
     # Raises QuizException if the status is not 200
     def get_question(question)
         questionResp = @connection.get("#{Quiz::QUESTION}?id=#{question}")
-        raise QuizException.new("Falied to get question, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if questionResp.status != 200
+        raise QuizException.new("Failed to get question, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if questionResp.status != 200
         questionResp.body
 
     end
@@ -91,7 +104,7 @@ class Quiz
             req.headers['Content-Type'] = 'application/json'
             req.body = { id: questionId, answer: answer }.to_json
         end
-        raise QuizException.new("Falied to evaluate question, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if evaluatorReq.status != 200
+        raise QuizException.new("Failed to evaluate question, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if evaluatorReq.status != 200
         evaluation = evaluatorReq.body
         score = self.save_score(name, quizId, questionId, evaluation["correct"])
         evaluation["score"] = score["score"]
@@ -108,18 +121,18 @@ class Quiz
             req.headers['Content-Type'] = 'application/json'
             req.body = { name: name, time: quizId, question: questionId.to_i, answer: correct }.to_json
         end
-    
-        raise QuizException.new("Falied to update score, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if scorePut.status != 202
+
+        raise QuizException.new("Failed to update score, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if scorePut.status != 202
         scorePut.body
     end
 
     # Returns the body of the response of the API Call
     # to get all scores.
     # Raises QuizException if the status is not 200
-    def get_score
-        score = @connection.get(SCORE)
-        raise QuizException.new("Falied to get score, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if score.status != 200
-        score.body
+    def get_scores
+        score = @connection.get(Quiz::SCORE)
+        raise QuizException.new("Failed to get score, API responded with status #{quizResp.status} and error #{quizResp.body["error"]}") if score.status != 200
+        score.body.to_json
     end
 
 end

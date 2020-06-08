@@ -28,7 +28,7 @@ end
 get '/score' do
   @title = "Score"
   @name = "score"
-  @scores = QUIZ.get_score
+  @scores = QUIZ.get_scores
   erb :score, :layout => :page
 end
 
@@ -36,6 +36,12 @@ end
 get '/' do
   @title = "Quiz Application with Microservices"
   erb :home, :layout => :page
+end
+
+# Starts a new quiz
+post '/login' do
+  quiz = QUIZ.create_quiz(params["name"], params["questions"])
+  redirect "quiz/#{params["name"]}/#{quiz["req_time"]}"
 end
 
 # Renders continue quiz view
@@ -79,10 +85,10 @@ post '/quiz/*/*' do |name, quizId|
     evaluation = QUIZ.evaluate(name, quizId, params['id'], params['answer'])
     @question = params['question']
     @answer = params['answer']
-    @correct = evaluation['correct']  
+    @correct = evaluation['correct']
     @name = name
     @quizId = quizId
-    @correctAnswer = evaluation['answer']  
+    @correctAnswer = evaluation['answer']
     @score = evaluation["score"]
     @end = evaluation["end"]
     erb :solution, :layout => :page

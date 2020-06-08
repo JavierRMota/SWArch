@@ -277,4 +277,4 @@ def lambda_handler(event:, context:)
         })
       }
     end
-  end
+end

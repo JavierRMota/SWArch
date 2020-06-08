@@ -6,39 +6,35 @@
       <!-- Title -->
       <div class="nes-container with-title is-centered is-dark" style="width: 375px; margin: auto; display: block; text-align: center;">
         <p class="title">High Scores</p>
-        <p style="color:white">You got ## points.</p>
+        <p style="color:white">Thanks for taking the Quiz!</p>
       </div>
       <br>
       <!-- High Scores -->
       <div class="nes-table-responsive" style="width: 325px; margin: auto; display: block; text-align: center;">
-        <table class="nes-table is-bordered is-dark is-centered">
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Player</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>JJRM</td>
-              <td>15</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>AML</td>
-              <td>13</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>NPM</td>
-              <td>10</td>
-            </tr>
-          </tbody>
+        <table class="nes-table is-bordered is-dark is-centered" id="scoresTable">
+        <tr>
+          <th>Name</th>
+          <th>Score</th>
+        </tr>
         </table>
       </div>
       <br>
-      <!-- Retry button -->
-      <button type="button" onClick="retryQuiz()" class="nes-btn is-primary" style="margin: auto; display: block;">Try again?</button>
+      <!-- Home button -->
+      <a type="button" onclick="window.location.href='/'" style="margin: auto; display: block; width: 350px" class="nes-btn is-primary">Return to Main Menu</a>
     </div>
+    <script type="text/javascript">
+    const data = <%= @scores || 'null' %>;
+    const scores = data['scores'];
+    console.log(scores)
+    //
+    const table = document.getElementById("scoresTable");
+
+    scores.forEach((item) => {
+      var row = table.insertRow(-1);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      cell1.innerHTML = item.name;
+      cell2.innerHTML = 'hola';
+    });
+
+    </script>
