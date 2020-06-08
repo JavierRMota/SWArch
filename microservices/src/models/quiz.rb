@@ -135,4 +135,16 @@ class Quiz
         score.body.to_a.sort { |a, b| b['score'] <=> a['score'] }
     end
 
+    def get_score(scores, name, quizId)
+        found = nil
+        scores.each do |score|
+            if (name == score['name'] && quizId == score['id'])
+                found = score['score']
+                break
+            end
+        end
+        raise QuizException.new("Score not found") if score.nil?
+        found
+    end
+
 end

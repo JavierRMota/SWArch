@@ -6,7 +6,10 @@
       <!-- Title -->
       <div class="nes-container with-title is-centered is-dark" style="width: 375px; margin: auto; display: block; text-align: center;">
         <p class="title">High Scores</p>
-        <p style="color:white">Thanks for taking the Quiz!</p>
+        <% if @score %>
+         <p style="color:white">Thanks for taking the Quiz!</p>
+         <p style="color:white">Your score is: @score</p>
+        <% end %>
       </div>
       <br>
       <!-- High Scores -->
