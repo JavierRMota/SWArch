@@ -27,7 +27,6 @@ The directory structure for the application and its documentation is as follows:
           ├─ img/                        Folder for the documentation’s image files.
           └─ src/                        Folder for the application’s source code.
                ├─ public/                Folder for the server’s public documents.
-               │       └─ js/            Folder for the application’s JS files.
                │       └─ images/        Folder for the application’s image files.
                ├─ models/                Folder for the application’s models.
                ├─ lambda/                Folder for the application's API running in AWS
